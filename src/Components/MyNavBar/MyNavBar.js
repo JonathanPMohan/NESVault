@@ -1,24 +1,18 @@
-import React from "react";
-import { NavLink as RRNavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import {
-  Collapse,
-  Nav,
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  NavItem,
-  NavLink
-} from "reactstrap";
-import "./AppNavbar.scss";
+  Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink,
+} from 'reactstrap';
+import './AppNavbar.scss';
 
 class AppNavbar extends React.Component {
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
 
@@ -30,19 +24,31 @@ class AppNavbar extends React.Component {
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink tag={RRNavLink} to="/home">
-                <i className="fas fa-search-location fa-1x" />
+                <i className="lnr lnr-home lnr-1x" />
                 Home
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/profile">
-                <i className="fas fa-dungeon fa-1x" />
+                <i className="lnr lnr-user lnr-1x" />
+                Profile
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={RRNavLink} to="/wishlist">
+                <i className="lnr lnr-magic-wand lnr-1x" />
+                Profile
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={RRNavLink} to="/tradelist">
+                <i className="lnr lnr-gift lnr-1x" />
                 Profile
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} onClick={logoutClickEvent} to="/home">
-                <i className="fas fa-sign-out-alt fa-1x" />
+                <i className="lnr lnr-cross lnr-1x" />
                 Logout
               </NavLink>
             </NavItem>
@@ -54,14 +60,11 @@ class AppNavbar extends React.Component {
 
     return (
       <div className="AppNavbar">
-        <Navbar color="dark" dark expand="md" fixed={"top"}>
+        <Navbar color="dark" dark expand="md" fixed={'top'}>
           <NavbarBrand tag={RRNavLink} to="/home">
-            Parting Pets Portal
+            NESVault Home
           </NavbarBrand>
-          <NavbarToggler
-            onClick={e => this.toggle(e)}
-            className="navbar-dark"
-          />
+          <NavbarToggler onClick={e => this.toggle(e)} className="navbar-dark" />
           <Collapse isOpen={this.state.isOpen} navbar>
             {buildNavbar()}
           </Collapse>
