@@ -3,8 +3,14 @@
 .App {
   text-align: center;
   height: 100vh;
+  background-color: $backgroundColor;
+  font-family: "PT Sans Narrow", sans-serif;
+  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nesHomeLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
 }

@@ -1,56 +1,56 @@
-import React from "react";
-import firebase from "firebase/app";
-import "firebase/auth";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import AppNavbar from "../components/AppNavbar/AppNavbar";
-import Auth from "../components/pages/Auth/Auth";
-import Home from "../components/pages/Home/Home";
-import authRequests from "../helpers/data/authRequests";
-import connection from "../helpers/data/connection";
+import React from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import {
+  BrowserRouter, Redirect, Route, Switch,
+} from 'react-router-dom';
+import MyNavBar from '../Components/MyNavBar/MyNavBar';
+import Auth from '../Components/Auth/Auth';
+import Home from '../Components/Pages/Home/Home';
+import authRequests from '../helpers/Data/authRequests';
+import connection from '../helpers/Data/connection';
 
-import "./App.scss";
+import nesLogo from '../images/nes_vault_logo.png';
+
+import './App.scss';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
-  // props contains Location, Match, and History
-  const routeChecker = props =>
-    authed === false ? (
+  const routeChecker = props => (authed === false ? (
       <Component {...props} />
-    ) : (
-      <Redirect to={{ pathname: "/home", state: { from: props.location } }} />
-    );
+  ) : (
+      <Redirect to={{ pathname: '/home', state: { from: props.location } }} />
+  ));
   return <Route {...rest} render={props => routeChecker(props)} />;
 };
 
 const PrivateRoute = ({ component: Component, authed, ...rest }) => {
-  // props contains Location, Match, and History
-  const routeChecker = props =>
-    authed === true ? (
+  const routeChecker = props => (authed === true ? (
       <Component {...props} />
-    ) : (
-      <Redirect to={{ pathname: "/auth", state: { from: props.location } }} />
-    );
+  ) : (
+      <Redirect to={{ pathname: '/auth', state: { from: props.location } }} />
+  ));
   return <Route {...rest} render={props => routeChecker(props)} />;
 };
 
 class App extends React.Component {
   state = {
     authed: false,
-    pendingUser: true
+    pendingUser: true,
   };
 
   componentDidMount() {
     connection();
 
-    this.removeListener = firebase.auth().onAuthStateChanged(user => {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({
           authed: true,
-          pendingUser: false
+          pendingUser: false,
         });
       } else {
         this.setState({
           authed: false,
-          pendingUser: false
+          pendingUser: false,
         });
       }
     });
@@ -65,7 +65,7 @@ class App extends React.Component {
     const logoutClickEvent = () => {
       authRequests.logoutUser();
       this.setState({
-        authed: false
+        authed: false,
       });
     };
 
@@ -77,7 +77,8 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <React.Fragment>
-            <AppNavbar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
+            <MyNavBar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
+            <img src={nesLogo} className="nesHomeLogo" alt="nes_logo" />
             <div className="app-content container-fluid">
               <div className="justify-content-center">
                 <Switch>

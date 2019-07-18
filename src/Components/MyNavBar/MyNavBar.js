@@ -3,7 +3,10 @@ import { NavLink as RRNavLink } from 'react-router-dom';
 import {
   Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink,
 } from 'reactstrap';
-import './AppNavbar.scss';
+
+import nes from '../../images/nes_vault_font.png';
+
+import './MyNavBar.scss';
 
 class AppNavbar extends React.Component {
   state = {
@@ -37,13 +40,13 @@ class AppNavbar extends React.Component {
             <NavItem>
               <NavLink tag={RRNavLink} to="/wishlist">
                 <i className="lnr lnr-magic-wand lnr-1x" />
-                Profile
+                Wishlist
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/tradelist">
                 <i className="lnr lnr-gift lnr-1x" />
-                Profile
+                Tradelist
               </NavLink>
             </NavItem>
             <NavItem>
@@ -62,7 +65,7 @@ class AppNavbar extends React.Component {
       <div className="AppNavbar">
         <Navbar color="dark" dark expand="md" fixed={'top'}>
           <NavbarBrand tag={RRNavLink} to="/home">
-            NESVault Home
+            <img src={nes} className="nesNavLogo" alt="nes_logo" />
           </NavbarBrand>
           <NavbarToggler onClick={e => this.toggle(e)} className="navbar-dark" />
           <Collapse isOpen={this.state.isOpen} navbar>

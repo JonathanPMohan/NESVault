@@ -1,6 +1,6 @@
 import React from 'react';
 import { createButton } from 'react-social-login-buttons';
-import authRequests from '../../../helpers/data/authRequests';
+import authRequests from '../../helpers/Data/authRequests';
 import './Auth.scss';
 
 // import NESLogo from '../../../images/nes_vault.png';
