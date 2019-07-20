@@ -7,7 +7,10 @@ const apiKeys = {
     storageBucket: '',
     messagingSenderId: '',
     appId: '',
-  }
+  },
+  nesVaultApi: {
+    apiBaseUrl: '',
+  },
 };
 
 export default apiKeys;

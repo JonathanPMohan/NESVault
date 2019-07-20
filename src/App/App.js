@@ -7,7 +7,13 @@ import {
 import MyNavBar from '../Components/MyNavBar/MyNavBar';
 import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Pages/Home/Home';
+import Profile from '../Components/Pages/Profile/Profile';
+import Collection from '../Components/Pages/Collection/Collection';
+import WishList from '../Components/Pages/WishList/WishList';
+import TradeList from '../Components/Pages/TradeList/TradeList';
+import CartList from '../Components/Pages/CartList/CartList';
 import authRequests from '../helpers/Data/authRequests';
+import userRequests from '../helpers/Data/userRequests';
 import connection from '../helpers/Data/connection';
 
 import nesLogo from '../images/nes_vault_logo.png';
@@ -36,6 +42,16 @@ class App extends React.Component {
   state = {
     authed: false,
     pendingUser: true,
+    userObject: {},
+  };
+
+  getCurrentUser = () => {
+    const userId = authRequests.getCurrentUid();
+    userRequests.getUserByFbId(userId).then((currentUser) => {
+      this.setState({
+        userObject: currentUser,
+      });
+    });
   };
 
   componentDidMount() {
@@ -48,6 +64,7 @@ class App extends React.Component {
           pendingUser: false,
         });
         authRequests.getCurrentUserJwt();
+        this.getCurrentUser();
       } else {
         this.setState({
           authed: false,
@@ -62,7 +79,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { authed, pendingUser } = this.state;
+    const { authed, pendingUser, userObject } = this.state;
     const logoutClickEvent = () => {
       authRequests.logoutUser();
       this.setState({
@@ -78,12 +95,51 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <React.Fragment>
-            <MyNavBar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
+            <MyNavBar isAuthed={authed} logoutClickEvent={logoutClickEvent} userObject={userObject} />
             <img src={nesLogo} className="nesHomeLogo" alt="nes_logo" />
             <div className="app-content container-fluid">
               <div className="justify-content-center">
                 <Switch>
                   <PublicRoute path="/auth" component={Auth} authed={authed} />
+
+                  <PrivateRoute
+                    path="/profile"
+                    component={props => <Profile userObject={userObject} updateUser={this.getCurrentUser} {...props} />}
+                    authed={authed}
+                  />
+
+                  <PrivateRoute
+                    path="/collection"
+                    component={props => (
+                      <Collection userObject={userObject} updateUser={this.getCurrentUser} {...props} />
+                    )}
+                    authed={authed}
+                  />
+
+                  <PrivateRoute
+                    path="/cartlist"
+                    component={props => (
+                      <CartList userObject={userObject} updateUser={this.getCurrentUser} {...props} />
+                    )}
+                    authed={authed}
+                  />
+
+                  <PrivateRoute
+                    path="/wishlist"
+                    component={props => (
+                      <WishList userObject={userObject} updateUser={this.getCurrentUser} {...props} />
+                    )}
+                    authed={authed}
+                  />
+
+                  <PrivateRoute
+                    path="/tradelist"
+                    component={props => (
+                      <TradeList userObject={userObject} updateUser={this.getCurrentUser} {...props} />
+                    )}
+                    authed={authed}
+                  />
+
                   <PrivateRoute path="/" component={Home} authed={authed} />
                 </Switch>
               </div>
