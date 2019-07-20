@@ -47,6 +47,7 @@ class App extends React.Component {
           authed: true,
           pendingUser: false,
         });
+        authRequests.getCurrentUserJwt();
       } else {
         this.setState({
           authed: false,
