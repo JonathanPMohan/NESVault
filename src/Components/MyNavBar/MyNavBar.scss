@@ -1,8 +1,23 @@
-.lnr {
-  margin-right: 10%;
-}
+// .lnr {
+//   margin-right: 10%;
+// }
 
 .nesNavLogo {
   width: 20%;
   float: left;
+}
+
+.navIcon {
+  vertical-align: middle;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.profIcon {
+  height: 35px;
+  border-radius: 8px;
+}
+
+.navIcon[class*="lnr-"] {
+  font-size: 20px;
 }
