@@ -38,6 +38,18 @@ class AppNavbar extends React.Component {
               </NavLink>
             </NavItem>
             <NavItem>
+              <NavLink tag={RRNavLink} to="/collection">
+                <i className="lnr lnr-layers lnr-1x" />
+                Collection
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={RRNavLink} to="/cartlist">
+                <i className="lnr lnr-list lnr-1x" />
+                Cartlist
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink tag={RRNavLink} to="/wishlist">
                 <i className="lnr lnr-magic-wand lnr-1x" />
                 Wishlist
@@ -51,7 +63,7 @@ class AppNavbar extends React.Component {
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} onClick={logoutClickEvent} to="/home">
-                <i className="lnr lnr-cross lnr-1x" />
+                <i className="lnr lnr-exit-up lnr-1x" />
                 Logout
               </NavLink>
             </NavItem>
@@ -63,7 +75,7 @@ class AppNavbar extends React.Component {
 
     return (
       <div className="AppNavbar">
-        <Navbar color="dark" dark expand="md" fixed={'top'}>
+        <Navbar color="black" dark expand="md" fixed={'top'}>
           <NavbarBrand tag={RRNavLink} to="/home">
             <img src={nes} className="nesNavLogo" alt="nes_logo" />
           </NavbarBrand>
