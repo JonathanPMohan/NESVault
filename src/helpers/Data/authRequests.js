@@ -7,7 +7,7 @@ axios.interceptors.request.use(
   request => getCurrentUserJwt()
     .then(() => {
       const token = sessionStorage.getItem('token');
-      if (token != null && request.url.startsWith('https://localhost:44302')) {
+      if (token != null && request.url.startsWith('https://localhost:44344')) {
         request.headers.Authorization = `Bearer ${token}`;
       }
       return request;
