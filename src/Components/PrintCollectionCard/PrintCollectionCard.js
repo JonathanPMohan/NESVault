@@ -20,10 +20,10 @@ class PrintCollectionCard extends React.Component {
     return (
       <div className="myCartCard col-2">
         <img className="myCartImage" src={myCart.imageUrl} alt={myCart.id} />
-        <h4 className="myCart-card-header">{myCart.name}</h4>
+        {/* <h4 className="myCart-card-header">{myCart.name}</h4> */}
         <div className="card-body" onClick={this.myCartClick}>
-          <h6 className="card-text">{myCart.description}</h6>
-          <h5 className="card-text">$ {myCart.unitPrice}</h5>
+          {/* <h6 className="card-text">{myCart.description}</h6>
+          <h5 className="card-text">$ {myCart.unitPrice}</h5> */}
           <h5 className="card-text">
             <button className="myCart-details" onClick={this.myCartClick}>
               INFO
