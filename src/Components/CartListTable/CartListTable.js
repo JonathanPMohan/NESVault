@@ -30,7 +30,9 @@ class CartListTable extends React.Component {
         <td className="name">{cart.name}</td>
         <td className="genre">{cart.genre}</td>
         <td className="release-date">{cart.releaseDate}</td>
-        <td className="loose">{cart.loose}</td>
+        <td className="loose">${cart.loose}</td>
+        <td className="cib">${cart.cib}</td>
+        <td className="nes">${cart.new}</td>
         <td className="icons">
           <i className="lnr lnr-plus-circle pencil" id={cart.id} onClick={this.addToMyCarts} />
         </td>

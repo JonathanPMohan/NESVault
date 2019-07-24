@@ -1,5 +1,7 @@
 import React from 'react';
 import cartRequests from '../../../helpers/Data/cartRequests';
+import authRequests from '../../../helpers/Data/authRequests';
+import userRequests from '../../../helpers/Data/userRequests';
 import CartListTable from '../../CartListTable/CartListTable';
 import './CartList.scss';
 
@@ -30,11 +32,21 @@ class CartList extends React.Component {
       });
   };
 
+  //   componentDidMount() {
+  //     this.partnerMounted = !!this.props.userObject.id;
+  //     if (this.partnerMounted) {
+  //       this.getAllCarts();
+  //     }
+  //   }
+
   componentDidMount() {
-    this.partnerMounted = !!this.props.userObject.id;
-    if (this.partnerMounted) {
-      this.getAllCarts();
-    }
+    const currentUid = authRequests.getCurrentUid();
+    this.getCarts();
+    userRequests.getUserByFbId(currentUid).then((response) => {
+      this.setState({
+        currentUserObj: response,
+      });
+    });
   }
 
   componentWillUnmount() {
