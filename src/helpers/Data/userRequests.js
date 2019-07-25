@@ -9,9 +9,42 @@ const getUserByFbId = uid => new Promise((resolve, reject) => {
     .then((result) => {
       resolve(result.data);
     })
-    .catch(error => reject(error));
+    .catch((error) => {
+      console.log(error);
+      reject(error);
+    });
+});
+
+const createUser = newUser => new Promise((resolve, reject) => {
+  axios
+    .post(`${nesVaultApiBaseUrl}/api/Users/`, newUser)
+    .then((result) => {
+      resolve(result.data);
+    })
+    .catch(error => console.error('Error creating user', error));
+});
+
+const updateUser = newUser => new Promise((resolve, reject) => {
+  axios
+    .put(`${nesVaultApiBaseUrl}/api/Users/${newUser.id}`, newUser)
+    .then((result) => {
+      resolve(result.data);
+    })
+    .catch(error => console.error('Error updating user', error));
+});
+
+const deleteUser = userId => new Promise((resolve, reject) => {
+  axios
+    .delete(`${nesVaultApiBaseUrl}/api/Users/${userId}`)
+    .then((result) => {
+      resolve(result.data);
+    })
+    .catch(error => console.error('Error deleting user'));
 });
 
 export default {
   getUserByFbId,
+  createUser,
+  updateUser,
+  deleteUser,
 };
