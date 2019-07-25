@@ -14,6 +14,8 @@ import {
 } from 'reactstrap';
 import './RegistrationForm.scss';
 
+import nes from '../../images/nes_vault_font.png';
+
 const defaultUser = {
   firstName: '',
   lastName: '',
@@ -105,7 +107,7 @@ class RegistrationForm extends React.Component {
   render() {
     const { newUser, isLoading, isEditing } = this.state;
     return (
-      <div className="RegistrationForm">
+      <div className="Registration-Form">
         <Modal
           className="form-modal"
           isOpen={this.state.modal}
@@ -116,7 +118,10 @@ class RegistrationForm extends React.Component {
           size="lg"
         >
           <ModalHeader toggle={e => this.toggle(e)}>
-            {isEditing ? 'Edit NESVault User' : 'NESVault User Registration'}
+            <img src={nes} className="nes-modal-logo" alt="nes_logo" />
+            <h1>
+              <b>{isEditing ? 'Edit NESVault User' : 'NESVault User Registration'}</b>
+            </h1>
           </ModalHeader>
           <ModalBody>
             <Form>
@@ -129,7 +134,7 @@ class RegistrationForm extends React.Component {
                       type="text"
                       name="firstName"
                       id="firstName"
-                      placeholder="Whats In A Name"
+                      placeholder="First Name"
                       onChange={this.firstNameChange}
                       value={newUser.firstName}
                     />
@@ -143,7 +148,7 @@ class RegistrationForm extends React.Component {
                       type="text"
                       name="lastName"
                       id="lastName"
-                      placeholder="Last Name First"
+                      placeholder="Last Name"
                       onChange={this.lastNameChange}
                       value={newUser.lastName}
                     />
@@ -159,7 +164,7 @@ class RegistrationForm extends React.Component {
                       type="email"
                       name="email"
                       id="userEmail"
-                      placeholder="pet_ownwer@luvmypet.com"
+                      placeholder="whatsYourEmail@NESCollector.com"
                       onChange={this.emailChange}
                       value={newUser.email}
                     />
@@ -183,11 +188,11 @@ class RegistrationForm extends React.Component {
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.formSubmit}>
-              Submit
+            <Button color="secondary" className="submit-button" onClick={this.formSubmit}>
+              SUBMIT
             </Button>{' '}
-            <Button color="secondary" onClick={e => this.toggle(e)}>
-              Cancel
+            <Button color="secondary" className="cancel-button" onClick={e => this.toggle(e)}>
+              CANCEL
             </Button>
           </ModalFooter>
         </Modal>
