@@ -44,33 +44,6 @@ class Profile extends React.Component {
                 </CardBody>
               </Card>
             </div>
-            <div className="col-sm-8">
-              <Card>
-                {/* <CardImg className="profileCardImg" top width="100%" src={fbUserObject.photoURL} alt="Card image cap" /> */}
-                <CardHeader>{`${userObject.firstName} ${userObject.lastName}`}</CardHeader>
-                <div className="col-sm-2">
-                  <CardImg
-                    className="profileCardImg"
-                    top
-                    width="100%"
-                    src={fbUserObject.photoURL}
-                    alt="Card image cap"
-                  />
-                </div>
-                <div className="col-sm-10">
-                  <CardBody>
-                    {/* <CardSubtitle>Address:</CardSubtitle> */}
-                    <CardText>
-                      <p>{userObject.street}</p>
-                      <p>
-                        {userObject.city} {userObject.state}, {userObject.zipcode}
-                      </p>
-                    </CardText>
-                    <Button>Edit</Button>
-                  </CardBody>
-                </div>
-              </Card>
-            </div>
           </div>
         </div>
       </div>

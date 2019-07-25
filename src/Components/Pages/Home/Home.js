@@ -52,11 +52,12 @@ class Home extends React.Component {
   };
 
   userFormSubmitEvent = (newUser) => {
-    const { updateUser } = this.props;
+    // const { updateUser } = this.props;
+    newUser.isDeleted = false;
     userRequests
       .createUser(newUser)
       .then((result) => {
-        updateUser();
+        // updateUser();
         this.setState({
           showModal: false,
         });

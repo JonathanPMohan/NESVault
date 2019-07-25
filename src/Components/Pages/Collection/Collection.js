@@ -14,8 +14,9 @@ class Collection extends React.Component {
   };
 
   getCollection = () => {
+    const userDbId = this.props.userObject.id;
     collectionRequests
-      .getAllMyCarts()
+      .getAllMyCarts(userDbId)
       .then((myCarts) => {
         this.setState({ myCarts });
         this.setState({ filteredMyCarts: myCarts });

@@ -7,9 +7,9 @@ const nesVaultApiBaseUrl = apiKeys.nesVaultApi.apiBaseUrl;
 const getCurrentUid = () => firebase.auth().currentUser.uid;
 
 // Get All MyCarts For Collection Page //
-const getAllMyCarts = () => new Promise((resolve, reject) => {
+const getAllMyCarts = userDbId => new Promise((resolve, reject) => {
   axios
-    .get(`${nesVaultApiBaseUrl}/api/mycarts/`)
+    .get(`${nesVaultApiBaseUrl}/api/mycarts/mycollection/${userDbId}`)
     .then((result) => {
       resolve(result.data);
     })
