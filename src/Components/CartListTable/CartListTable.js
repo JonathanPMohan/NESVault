@@ -34,7 +34,7 @@ class CartListTable extends React.Component {
         <td className="cib">${cart.cib}</td>
         <td className="nes">${cart.new}</td>
         <td className="icons">
-          <i className="lnr lnr-plus-circle pencil" id={cart.id} onClick={this.addToMyCarts} />
+          <i className="add-cart-button lnr lnr-plus-circle pencil" id={cart.id} onClick={this.addToMyCarts} />
         </td>
       </tr>
     );

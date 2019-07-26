@@ -1,14 +1,23 @@
 .Profile {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
-.profileCardImg {
-  height: 35px;
-  float: right;
+.profile-card-img {
+  height: 75%;
+  width: 95%;
+  margin: 2%;
+  border-radius: 20px;
 }
 
 .card-header {
   font-size: 1.25rem;
   font-weight: bold;
   background-color: red;
+  color: black;
+  //   border: 5px solid white;
+}
+
+.profile-container {
+  margin-left: -10%;
+  margin-top: -35%;
 }

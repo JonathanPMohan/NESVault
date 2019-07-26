@@ -6,11 +6,11 @@ import './Auth.scss';
 // import NESLogo from '../../../images/nes_vault.png';
 
 const btnConfig = {
-  text: 'Google Login',
+  text: 'GOOGLE LOGIN',
   icon: 'gamepad',
   iconFormat: name => 'fas fa-gamepad',
-  style: { background: '#15153a' },
-  activeStyle: { background: '#293e69' },
+  style: { background: 'red' },
+  activeStyle: { background: 'grey' },
 };
 
 /** My Google login button. */
@@ -35,7 +35,7 @@ class Auth extends React.Component {
       <div className="Auth mt-5">
         <div className="d-flex justify-content-center" />
         <div className="login d-flex justify-content-center">
-          <MyGoogleLoginButton id="googleBtn" onClick={this.googleAuthenticateUser} />
+          <MyGoogleLoginButton id="googleBtn" className="google-auth" onClick={this.googleAuthenticateUser} />
         </div>
       </div>
     );
