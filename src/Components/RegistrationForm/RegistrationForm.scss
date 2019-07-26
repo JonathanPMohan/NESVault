@@ -1,5 +1,6 @@
-.form-input {
-  background-color: black;
+.form-input,
+.rbt-input {
+  background-color: black !important;
   color: white !important;
 }
 
@@ -12,6 +13,7 @@
 
 .modal-body {
   background-color: gainsboro;
+  color: black;
   //   background-image: url("https://11points.com/wp-content/uploads/2010/04/deceptivenesbox-1600.jpg");
 }
 
@@ -39,4 +41,8 @@
   float: left;
   padding-right: 5%;
   margin-right: 3%;
+}
+
+.textArea {
+  resize: none;
 }

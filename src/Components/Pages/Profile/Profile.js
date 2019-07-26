@@ -28,10 +28,20 @@ class Profile extends React.Component {
       <div className="Profile">
         <div className="container">
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-4 profile-container">
               <Card>
-                {/* <CardImg className="profileCardImg" top width="100%" src={fbUserObject.photoURL} alt="Card image cap" /> */}
-                <CardHeader>{`${userObject.firstName} ${userObject.lastName}`}</CardHeader>
+                <CardImg
+                  className="profile-card-img"
+                  top
+                  width="100%"
+                  src={fbUserObject.photoURL}
+                  alt="Card image cap"
+                />
+                <CardHeader>
+                  <h2>
+                    <b>{`${userObject.userName}`}</b>
+                  </h2>
+                </CardHeader>
                 <CardBody>
                   {/* <CardSubtitle>Address:</CardSubtitle> */}
                   <CardText>
