@@ -1,5 +1,5 @@
 .Profile {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .card {
@@ -30,7 +30,7 @@
 
 .profile-container {
   margin-left: -10%;
-  margin-top: -35%;
+  margin-top: 0%;
 }
 
 .edit-profile-button {
@@ -39,4 +39,25 @@
   background-color: black;
   color: red;
   width: 25%;
+}
+
+// Charts //
+.chart-a {
+  margin-left: 68%;
+  margin-top: -52.25%;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.chart-b {
+  margin-left: 0%;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.chart-one {
+  width: 100px;
+}
+
+.chart-two {
 }

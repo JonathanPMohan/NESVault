@@ -1,9 +1,14 @@
 import React from 'react';
 import {
-  Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button, CardHeader,
+  Card, CardImg, CardText, CardBody, Button, CardHeader,
 } from 'reactstrap';
 import userRequests from '../../../helpers/Data/userRequests';
 import authRequests from '../../../helpers/Data/authRequests';
+
+// REACT CHART //
+import '../../../../node_modules/react-vis/dist/style.css';
+import { XYPlot, VerticalBarSeries, RadialChart } from 'react-vis';
+
 import './Profile.scss';
 
 class Profile extends React.Component {
@@ -24,6 +29,18 @@ class Profile extends React.Component {
 
   render() {
     const { userObject, fbUserObject } = this.state;
+
+    const data = [{ x: 9, y: 3 }];
+
+    const myData = [
+      { angle: 1, label: 'Super Custom label' },
+      { angle: 5 },
+      { angle: 2 },
+      { angle: 2 },
+      { angle: 2 },
+      { angle: 1 },
+    ];
+
     return (
       <div className="Profile">
         <div className="container">
@@ -43,7 +60,6 @@ class Profile extends React.Component {
                   </h2>
                 </CardHeader>
                 <CardBody>
-                  {/* <CardSubtitle>Address:</CardSubtitle> */}
                   <CardText>
                     <h5>
                       <b>CART COUNT:</b> 365
@@ -59,6 +75,18 @@ class Profile extends React.Component {
                 </CardBody>
               </Card>
             </div>
+            <RadialChart className="chart-b" data={myData} width={500} height={500} />
+            <XYPlot
+              height={500}
+              width={500}
+              className="chart-a"
+              color="red"
+              colorType="category"
+              colorDomain={[0, 1, 2]}
+            >
+              <VerticalBarSeries data={data} className="chart-one" color="red" />
+              <VerticalBarSeries data={data} className="chart-two" color="grey" />
+            </XYPlot>
           </div>
         </div>
       </div>
