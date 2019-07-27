@@ -21,6 +21,7 @@ const defaultUser = {
   lastName: '',
   userName: '',
   email: '',
+  favoriteGame: '',
 };
 
 class RegistrationForm extends React.Component {
@@ -92,6 +93,8 @@ class RegistrationForm extends React.Component {
   userNameChange = event => this.formFieldStringState('userName', event);
 
   emailChange = event => this.formFieldStringState('email', event);
+
+  favoriteGameChange = event => this.formFieldStringState('favoriteGame', event);
 
   formSubmit = (event) => {
     event.preventDefault();
@@ -181,6 +184,20 @@ class RegistrationForm extends React.Component {
                       placeholder="This Better Be Cool"
                       onChange={this.userNameChange}
                       value={newUser.userName}
+                    />
+                  </FormGroup>
+                </Col>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="favoriteGame">Favorite Game</Label>
+                    <Input
+                      className="form-input"
+                      type="text"
+                      name="favoriteGame"
+                      id="favoriteGame"
+                      placeholder="Name Your Favorite Game"
+                      onChange={this.favoriteGameChange}
+                      value={newUser.favoriteGame}
                     />
                   </FormGroup>
                 </Col>
