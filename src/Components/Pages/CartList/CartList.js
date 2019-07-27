@@ -76,6 +76,7 @@ class CartList extends React.Component {
                 <th scope="col">CIB</th>
                 <th scope="col">NEW</th>
                 <th scope="col">ADD</th>
+                <th scope="col">WISH</th>
               </tr>
             </thead>
             <tbody>{printCart}</tbody>

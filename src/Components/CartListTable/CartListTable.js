@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Utility from '../../helpers/utils/Utility';
 import './CartListTable.scss';
 
 class CartListTable extends React.Component {
@@ -10,10 +11,16 @@ class CartListTable extends React.Component {
     index: PropTypes.number,
   };
 
-  addToMyCarts = (e) => {
+  addToMyCollection = (e) => {
     e.preventDefault();
-    const { addToMyCarts, cart } = this.props;
-    addToMyCarts(cart.id);
+    const { addToMyCollection, cart } = this.props;
+    addToMyCollection(cart.id);
+  };
+
+  addToMyWishList = (e) => {
+    e.preventDefault();
+    const { addToMyWishList, cart } = this.props;
+    addToMyWishList(cart.id);
   };
 
   render() {
@@ -29,12 +36,15 @@ class CartListTable extends React.Component {
         </td>
         <td className="name">{cart.name}</td>
         <td className="genre">{cart.genre}</td>
-        <td className="release-date">{cart.releaseDate}</td>
+        <td className="release-date">{Utility.dateFormat(cart.releaseDate)}</td>
         <td className="loose">${cart.loose}</td>
         <td className="cib">${cart.cib}</td>
         <td className="nes">${cart.new}</td>
         <td className="icons">
-          <i className="add-cart-button lnr lnr-plus-circle pencil" id={cart.id} onClick={this.addToMyCarts} />
+          <i className="add-cart-button lnr lnr-plus-circle" id={cart.id} onClick={this.addToMyCarts} />
+        </td>
+        <td className="icons">
+          <i className="magic-wand-button lnr lnr-magic-wand" id={cart.id} onClick={this.addToMyWishList} />
         </td>
       </tr>
     );
