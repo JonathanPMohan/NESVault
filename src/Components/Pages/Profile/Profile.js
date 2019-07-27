@@ -45,12 +45,16 @@ class Profile extends React.Component {
                 <CardBody>
                   {/* <CardSubtitle>Address:</CardSubtitle> */}
                   <CardText>
-                    <h5>MY CART COUNT:</h5>
+                    <h5>
+                      <b>CART COUNT:</b> 365
+                    </h5>
                     <p />
-                    <p>{`${userObject.favoriteGame}`}</p>
+                    <p>
+                      <b>FAVORITE GAME:</b> {`${userObject.favoriteGame}`}
+                    </p>
                   </CardText>
                   <Button color="black" className="edit-profile-button">
-                    Edit
+                    EDIT
                   </Button>
                 </CardBody>
               </Card>
