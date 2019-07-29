@@ -46,7 +46,8 @@ class Collection extends React.Component {
       myCarts.forEach((myCart) => {
         if (
           myCart.name.toLowerCase().includes(value.toLowerCase())
-          || myCart.description.toLowerCase().includes(value.toLowerCase())
+          || myCart.name.toLowerCase().includes(value.toLowerCase())
+          || myCart.genre.toLowerCase().includes(value.toLowerCase())
         ) {
           filteredMyCarts.push(myCart);
         }
@@ -70,7 +71,7 @@ class Collection extends React.Component {
       <div className="myCarts mx-auto animated fadeIn w-100">
         <div className="myCartsWrap">
           <SearchField
-            placeholder="Search Collection By Name or Genre"
+            placeholder="Search Wish List By Name or Genre"
             onChange={this.onChange}
             searchText=""
             classNames="collectionSearch"

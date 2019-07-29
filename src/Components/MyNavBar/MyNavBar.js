@@ -29,46 +29,46 @@ class AppNavbar extends React.Component {
             <NavItem>
               <NavLink tag={RRNavLink} to="/home">
                 <i className="navIcon lnr lnr-home lnr-1x" />
-                Home
+                HOME
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/profile">
                 <i className="navIcon lnr lnr-user lnr-1x" />
-                Profile
+                PROFILE
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/collection">
                 <i className="navIcon lnr lnr-layers lnr-1x" />
-                Collection
+                COLLECTION
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/cartlist">
                 <i className="navIcon lnr lnr-list lnr-1x" />
-                Cartlist
+                CARTLIST
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/wishlist">
                 <i className="navIcon lnr lnr-magic-wand lnr-1x" />
-                Wishlist
+                WISHLIST
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/tradelist">
                 <i className="navIcon lnr lnr-gift lnr-1x" />
-                Tradelist
+                TRADELIST
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} onClick={logoutClickEvent} to="/home">
                 <i className="navIcon lnr lnr-exit-up lnr-1x" />
-                Logout
+                LOGOUT
               </NavLink>
             </NavItem>
-            <img className="navIcon profIcon" src={profileImgUrl()} alt="ProfilePic" />
+            <img className="profIcon" src={profileImgUrl()} alt="ProfilePic" />
           </Nav>
         );
       }
@@ -77,7 +77,7 @@ class AppNavbar extends React.Component {
 
     return (
       <div className="AppNavbar">
-        <Navbar color="black" dark expand="md" fixed={'top'}>
+        <Navbar className="nav-bar" dark expand="md" fixed={'top'}>
           <NavbarBrand tag={RRNavLink} to="/home">
             <img src={nes} className="nesNavLogo" alt="nes_logo" />
           </NavbarBrand>
