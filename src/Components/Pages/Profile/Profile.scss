@@ -1,9 +1,10 @@
 .Profile {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .card {
   background-color: black;
+  width: 85%;
 }
 
 .profile-card-img {
@@ -19,18 +20,22 @@
   font-weight: bold;
   background-color: red;
   color: black;
-  border: 2px solid white;
+  border-bottom: 2px solid black;
+  border-top: 3px solid white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: "Varela Round", sans-serif;
 }
 
 .card-body {
   color: black;
   background-color: grey;
-  border: 2px solid white;
+  border-top: 2px solid black;
 }
 
 .profile-container {
   margin-left: -10%;
-  margin-top: 0%;
+  margin-bottom: 3%;
 }
 
 .edit-profile-button {
@@ -42,22 +47,24 @@
 }
 
 // Charts //
-.chart-a {
-  margin-left: 68%;
-  margin-top: -52.25%;
-  border: 2px solid white;
-  border-radius: 10px;
-}
-
 .chart-b {
+  margin-left: 120%;
+  margin-top: -100%;
+  // border: 2px solid white;
+  // border-radius: 10px;
+}
+
+.chart-a {
   margin-left: 0%;
-  border: 2px solid white;
-  border-radius: 10px;
+  margin-top: -5%;
+  // border: 2px solid white;
+  // border-radius: 10px;
 }
 
-.chart-one {
-  width: 100px;
-}
+// .chart-one {
+//   width: 100px;
+// }
 
-.chart-two {
-}
+// .chart-two {
+//   width: 100px;
+// }

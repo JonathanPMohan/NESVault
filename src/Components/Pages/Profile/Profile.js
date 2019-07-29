@@ -7,7 +7,7 @@ import authRequests from '../../../helpers/Data/authRequests';
 
 // REACT CHART //
 import '../../../../node_modules/react-vis/dist/style.css';
-import { XYPlot, VerticalBarSeries, RadialChart } from 'react-vis';
+import { RadialChart, ChartLabel } from 'react-vis';
 
 import './Profile.scss';
 
@@ -30,16 +30,7 @@ class Profile extends React.Component {
   render() {
     const { userObject, fbUserObject } = this.state;
 
-    const data = [{ x: 9, y: 3 }];
-
-    const myData = [
-      { angle: 1, label: 'Super Custom label' },
-      { angle: 5 },
-      { angle: 2 },
-      { angle: 2 },
-      { angle: 2 },
-      { angle: 1 },
-    ];
+    const myData = [{ angle: 1 }, { angle: 5 }, { angle: 2 }, { angle: 2 }, { angle: 2 }, { angle: 1 }];
 
     return (
       <div className="Profile">
@@ -75,18 +66,11 @@ class Profile extends React.Component {
                 </CardBody>
               </Card>
             </div>
-            <RadialChart className="chart-b" data={myData} width={500} height={500} />
-            <XYPlot
-              height={500}
-              width={500}
-              className="chart-a"
-              color="red"
-              colorType="category"
-              colorDomain={[0, 1, 2]}
-            >
-              <VerticalBarSeries data={data} className="chart-one" color="red" />
-              <VerticalBarSeries data={data} className="chart-two" color="grey" />
-            </XYPlot>
+            <div className="pie-chart">
+              <h4>GENRE BREAKDOWN</h4>
+              <RadialChart className="chart-a" data={myData} width={400} height={400} />
+              <RadialChart className="chart-b" data={myData} width={400} height={400} />
+            </div>
           </div>
         </div>
       </div>
