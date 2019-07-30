@@ -57,6 +57,12 @@ class Profile extends React.Component {
                     </h5>
                     <p />
                     <p>
+                      <b>TOTAL WORTH:</b> $1256
+                    </p>
+                    <p>
+                      <b>MOST VALUABLE:</b> {`${userObject.favoriteGame}`}
+                    </p>
+                    <p>
                       <b>FAVORITE GAME:</b> {`${userObject.favoriteGame}`}
                     </p>
                   </CardText>
@@ -66,11 +72,11 @@ class Profile extends React.Component {
                 </CardBody>
               </Card>
             </div>
-            <div className="pie-chart">
+            {/* <div className="pie-chart">
               <h4>GENRE BREAKDOWN</h4>
               <RadialChart className="chart-a" data={myData} width={400} height={400} />
               <RadialChart className="chart-b" data={myData} width={400} height={400} />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
