@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Utility from '../../helpers/utils/Utility';
 
 import './PrintWishListCard.scss';
 
@@ -19,9 +20,10 @@ class PrintWishListCard extends React.Component {
 
     return (
       <div className="myCartCard col-2">
-        <img className="myCartImage" src={myCart.imageUrl} alt={myCart.id} />
-        <h4 className="myCart-card-header">{wishList.id}</h4>
-        <h4 className="myCart-card-header">{wishList.cartId.name}</h4>
+        <img className="myCartImage" src={wishList.imageUrl} alt={wishList.id} />
+        <h4 className="myCart-card-header">{wishList.name}</h4>
+        <h4 className="myCart-card-header">{wishList.genre}</h4>
+        <h4 className="myCart-card-header">{Utility.dateFormat(wishList.releaseDate)}</h4>
         <div className="cart-card-body" onClick={this.myWishListClick}>
           <h5 className="card-text">
             <button className="myCart-details" onClick={this.myWishListClick}>

@@ -22,7 +22,7 @@ class WishList extends React.Component {
         this.setState({ filteredWishList: wishList });
       })
       .catch((err) => {
-        console.error('error with NESVault Collection GET', err);
+        console.error('error with NESVault WishList GET', err);
       });
   };
 
@@ -56,7 +56,7 @@ class WishList extends React.Component {
   };
 
   onSelect = (id) => {
-    this.props.history.push(`/wishlist/mycarts/${id}`);
+    this.props.history.push(`/wishlist/${id}`);
   };
 
   render() {
@@ -69,15 +69,14 @@ class WishList extends React.Component {
       <div className="myCarts mx-auto animated fadeIn w-100">
         <div className="myCartsWrap">
           <SearchField
-            placeholder="Search Collection By Name or Genre"
+            placeholder="Search WishList By Name or Genre"
             onChange={this.onChange}
             searchText=""
-            classNames="collectionSearch"
+            classNames="wishlistSearch"
           />
         </div>
         <h1>ISO Stadium Events, LOL</h1>
         <div className="wish-list-window">
-          <p>My Wish List</p>
           <div className="row justify-content-center">{printWishList}</div>
         </div>
       </div>

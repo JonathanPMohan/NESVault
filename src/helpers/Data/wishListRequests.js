@@ -6,16 +6,7 @@ const nesVaultApiBaseUrl = apiKeys.nesVaultApi.apiBaseUrl;
 
 const getCurrentUid = () => firebase.auth().currentUser.uid;
 
-// Get All MyCarts For Collection Page //
-// const getAllMyCarts = userDbId => new Promise((resolve, reject) => {
-//   axios
-//     .get(`${nesVaultApiBaseUrl}/api/mycarts/mycollection/${userDbId}`)
-//     .then((result) => {
-//       resolve(result.data);
-//     })
-//     .catch(error => reject(error));
-// });
-
+// GET MY WISH LIST FOR WISH LIST PAGE //
 const getMyWishList = userDbId => new Promise((resolve, reject) => {
   axios
     .get(`${nesVaultApiBaseUrl}/api/wishlist/${userDbId}`)

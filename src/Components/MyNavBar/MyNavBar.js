@@ -77,7 +77,7 @@ class AppNavbar extends React.Component {
 
     return (
       <div className="AppNavbar">
-        <Navbar className="nav-bar" dark expand="md" fixed={'top'}>
+        <Navbar className="nav-bar" style={{ display: isAuthed ? '' : 'none' }} dark expand="md" fixed={'top'}>
           <NavbarBrand tag={RRNavLink} to="/home">
             <img src={nes} className="nesNavLogo" alt="nes_logo" />
           </NavbarBrand>
