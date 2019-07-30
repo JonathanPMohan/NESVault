@@ -23,7 +23,7 @@ class PrintCollectionCard extends React.Component {
         <img className="myCartImage" src={myCart.imageUrl} alt={myCart.id} />
         <div className="cart-card-body" onClick={this.myCartClick}>
           <h5 className="card-text">
-            <h3 className="collection-name">{myCart.name}</h3>
+            <h4 className="collection-name">{myCart.name}</h4>
             <h6 className="collection-genre">{myCart.genre}</h6>
             <h6 className="collection-release-date">{Utility.dateFormat(myCart.releaseDate)}</h6>
             <button className="myCart-details" onClick={this.myCartClick}>
