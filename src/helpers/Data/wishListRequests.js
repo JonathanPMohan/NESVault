@@ -16,6 +16,16 @@ const getMyWishList = userDbId => new Promise((resolve, reject) => {
     .catch(error => reject(error));
 });
 
+// Create Wishlist Cart Call //
+const createMyWishListCart = newMyWishListCart => new Promise((resolve, reject) => {
+  axios
+    .post(`${nesVaultApiBaseUrl}/api/wishlist/`, newMyWishListCart)
+    .then((result) => {
+      resolve(result.data);
+    })
+    .catch(error => reject(error));
+});
+
 //   // Get Single MyCart By ID //
 // const getSingleMyCart = id => new Promise((resolve, reject) => {
 //   axios
@@ -62,6 +72,7 @@ const getMyWishList = userDbId => new Promise((resolve, reject) => {
 
 export default {
   getMyWishList,
+  createMyWishListCart,
   //   getSingleMyCart,
   //   createMyCart,
   //   editMyCart,
