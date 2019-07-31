@@ -22,8 +22,9 @@ class PrintWishListCard extends React.Component {
       <div className="myCartCard col-2">
         <img className="myCartImage" src={wishList.imageUrl} alt={wishList.id} />
         <h4 className="myCart-card-header">{wishList.name}</h4>
-        <h4 className="myCart-card-header">{wishList.genre}</h4>
-        <h4 className="myCart-card-header">{Utility.dateFormat(wishList.releaseDate)}</h4>
+        <h6 className="myCart-card-header">{wishList.genre}</h6>
+        <h6 className="myCart-card-header">{Utility.dateFormat(wishList.releaseDate)}</h6>
+        <h6 className="collection-loose-price">${wishList.loose}</h6>
         <div className="cart-card-body" onClick={this.myWishListClick}>
           <h5 className="card-text">
             <button className="myCart-details" onClick={this.myWishListClick}>

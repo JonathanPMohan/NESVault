@@ -26,6 +26,7 @@ class PrintCollectionCard extends React.Component {
             <h4 className="collection-name">{myCart.name}</h4>
             <h6 className="collection-genre">{myCart.genre}</h6>
             <h6 className="collection-release-date">{Utility.dateFormat(myCart.releaseDate)}</h6>
+            <h6 className="collection-loose-price">${myCart.loose}</h6>
             <button className="myCart-details" onClick={this.myCartClick}>
               INFO
               <span className="lnr lnr-list cart-info-icon" />
