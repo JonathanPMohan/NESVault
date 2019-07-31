@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import collectionRequests from '../../helpers/Data/collectionRequests';
 import Utility from '../../helpers/utils/Utility';
 import './CartListTable.scss';
 
@@ -13,8 +14,13 @@ class CartListTable extends React.Component {
 
   addToMyCollection = (e) => {
     e.preventDefault();
-    const { addToMyCollection, cart } = this.props;
-    addToMyCollection(cart.id);
+    const { cart, userObject } = this.props;
+    // const newMyCart = {};
+    // newMyCart.userId = userObject.id;
+    cart.userId = userObject.id;
+    cart.cartsId = cart.id;
+
+    collectionRequests.createMyCart(cart);
   };
 
   addToMyWishList = (e) => {
@@ -41,7 +47,7 @@ class CartListTable extends React.Component {
         <td className="cib">${cart.cib}</td>
         <td className="nes">${cart.new}</td>
         <td className="icons">
-          <i className="add-cart-button lnr lnr-plus-circle" id={cart.id} onClick={this.addToMyCarts} />
+          <i className="add-cart-button lnr lnr-plus-circle" id={cart.id} onClick={this.addToMyCollection} />
         </td>
         <td className="icons">
           <i className="magic-wand-button lnr lnr-magic-wand" id={cart.id} onClick={this.addToMyWishList} />

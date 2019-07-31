@@ -41,7 +41,7 @@ const getSingleMyCartClick = id => new Promise((resolve, reject) => {
 // Create MyCart Call //
 const createMyCart = newMyCart => new Promise((resolve, reject) => {
   axios
-    .post(`${nesVaultApiBaseUrl}/api/mycart/`, newMyCart)
+    .post(`${nesVaultApiBaseUrl}/api/mycarts/`, newMyCart)
     .then((result) => {
       resolve(result.data);
     })
