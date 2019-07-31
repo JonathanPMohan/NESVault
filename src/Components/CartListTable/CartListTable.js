@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import collectionRequests from '../../helpers/Data/collectionRequests';
+import wishListRequests from '../../helpers/Data/wishListRequests';
 import Utility from '../../helpers/utils/Utility';
 import './CartListTable.scss';
 
@@ -8,15 +9,12 @@ class CartListTable extends React.Component {
   state = {};
 
   static propTypes = {
-    // product: productShape,
     index: PropTypes.number,
   };
 
   addToMyCollection = (e) => {
     e.preventDefault();
     const { cart, userObject } = this.props;
-    // const newMyCart = {};
-    // newMyCart.userId = userObject.id;
     cart.userId = userObject.id;
     cart.cartsId = cart.id;
 
@@ -25,8 +23,11 @@ class CartListTable extends React.Component {
 
   addToMyWishList = (e) => {
     e.preventDefault();
-    const { addToMyWishList, cart } = this.props;
-    addToMyWishList(cart.id);
+    const { cart, userObject } = this.props;
+    cart.userId = userObject.id;
+    cart.cartId = cart.id;
+
+    wishListRequests.createMyWishListCart(cart);
   };
 
   render() {
