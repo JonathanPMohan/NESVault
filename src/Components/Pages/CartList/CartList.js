@@ -56,9 +56,10 @@ class CartList extends React.Component {
   render() {
     // const { userObject } = this.props;
     const { carts } = this.state;
+    const { userObject } = this.props;
 
     const printCart = carts.map((cart, index) => (
-      <CartListTable key={cart.id} index={index} cart={cart} onSelect={this.onSelect} />
+      <CartListTable key={cart.id} index={index} cart={cart} onSelect={this.onSelect} userObject={userObject} />
     ));
 
     return (
