@@ -1,0 +1,38 @@
+.nes-cart-detail-wrapper {
+  width: 50%;
+  height: 400px;
+  border-radius: 10px;
+  border: 5px solid red;
+  margin-bottom: 5%;
+  padding: 3%;
+}
+
+.singleNesCart-image {
+  float: left;
+  width: 50%;
+}
+
+.nes-detail {
+  min-height: 70vh;
+}
+
+.nes-cart-detail-single {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.backToCollection {
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+  float: right;
+  padding: 10px;
+  text-align: center;
+  margin: 0px 25px;
+  width: 40%;
+}
+
+.back {
+  margin-right: 10%;
+  height: 20%;
+}
