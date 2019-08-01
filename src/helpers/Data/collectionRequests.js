@@ -27,16 +27,18 @@ const getSingleMyCart = id => new Promise((resolve, reject) => {
 });
 
 // Get Single MyCart By Click //
-const getSingleMyCartClick = id => new Promise((resolve, reject) => {
-  axios
-    .get(`${nesVaultApiBaseUrl}/api/mycarts/${id}`)
-    .then((result) => {
-      const singleItem = result.data;
-      singleItem.id = id;
-      resolve(singleItem);
-    })
-    .catch(error => reject(error));
-});
+// const getSingleNesCartClick = id => new Promise((resolve, reject) => {
+//   axios
+//     .get(`${nesVaultApiBaseUrl}/api/mycarts/mycollection/${id}`)
+//     .then((result) => {
+//       const singleNesCart = result.data;
+//       singleNesCart.id = id;
+//       resolve(singleNesCart);
+//     })
+//     .catch(error => reject(error));
+// });
+
+const getSingleNesCartClick = id => axios.get(`${nesVaultApiBaseUrl}/api/mycarts/${id}`);
 
 // Create MyCart Call //
 const createMyCart = newMyCart => new Promise((resolve, reject) => {
@@ -67,5 +69,5 @@ export default {
   editMyCart,
   deleteMyCart,
   getCurrentUid,
-  getSingleMyCartClick,
+  getSingleNesCartClick,
 };
