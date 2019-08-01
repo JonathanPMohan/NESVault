@@ -35,7 +35,7 @@ class NesDetail extends React.Component {
 
             <button className="backToCollection" onClick={this.backToCollectionView}>
               <span className="lnr lnr-arrow-left-circle back" />
-              BACK TO YOUR COLLECTION
+              BACK TO COLLECTION
             </button>
           </div>
         </div>

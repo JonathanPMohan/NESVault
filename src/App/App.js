@@ -12,6 +12,7 @@ import Collection from '../Components/Pages/Collection/Collection';
 import WishList from '../Components/Pages/WishList/WishList';
 import TradeList from '../Components/Pages/TradeList/TradeList';
 import NesDetail from '../Components/Pages/NesDetail/NesDetail';
+import WishListDetail from '../Components/Pages/WishListDetail/WishListDetail';
 import CartList from '../Components/Pages/CartList/CartList';
 import authRequests from '../helpers/Data/authRequests';
 import userRequests from '../helpers/Data/userRequests';
@@ -129,6 +130,14 @@ class App extends React.Component {
                     path="/cartlist"
                     component={props => (
                       <CartList userObject={userObject} updateUser={this.getCurrentUser} {...props} />
+                    )}
+                    authed={authed}
+                  />
+
+                  <PrivateRoute
+                    path="/wishlist/:id"
+                    component={props => (
+                      <WishListDetail userObject={userObject} updateUser={this.getCurrentUser} {...props} />
                     )}
                     authed={authed}
                   />

@@ -22,17 +22,24 @@
 }
 
 .backToCollection {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+
   border-radius: 20px;
   background-color: red;
   color: white;
-  float: right;
-  padding: 10px;
+  float: middle;
+  padding: 1040;
   text-align: center;
-  margin: 0px 25px;
-  width: 40%;
+  width: 35%;
+  height: 50%;
+}
+
+.backToCollection:hover {
+  background-color: grey;
+  color: black;
 }
 
 .back {
   margin-right: 10%;
-  height: 20%;
 }
