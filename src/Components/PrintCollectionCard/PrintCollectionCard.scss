@@ -12,6 +12,14 @@
   margin: 1%;
 }
 
+.myCartCard:hover {
+  background-image: linear-gradient(black, rgb(54, 53, 53));
+  border: 2px solid white;
+  border-radius: 20px;
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
 .myCart-details {
   margin-top: 5%;
   background-color: black;
@@ -35,7 +43,7 @@
 }
 
 .delete-cart-button {
-  background-color: black;
+  background: none;
   color: red;
   border-style: none;
   margin-left: 3%;

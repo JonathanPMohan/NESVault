@@ -33,7 +33,7 @@ class Profile extends React.Component {
     const myData = [{ angle: 1 }, { angle: 5 }, { angle: 2 }, { angle: 2 }, { angle: 2 }, { angle: 1 }];
 
     return (
-      <div className="Profile">
+      <div className="Profile animated fadeIn">
         <div className="container">
           <div className="row">
             <div className="col-sm-4 profile-container">
