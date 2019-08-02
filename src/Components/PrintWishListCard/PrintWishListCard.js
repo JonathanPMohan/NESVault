@@ -31,6 +31,9 @@ class PrintWishListCard extends React.Component {
               INFO
               <span className="lnr lnr-list cart-info-icon" />
             </button>
+            <button className="delete-cart-button" onClick={this.myCartClick}>
+              <span className="lnr lnr-cross-circle delete-cart-icon" />
+            </button>
           </h5>
         </div>
       </div>

@@ -29,3 +29,18 @@
 .cart-info-icon {
   margin-left: 5%;
 }
+
+.delete-cart-icon {
+  float: right;
+}
+
+.delete-cart-button {
+  background-color: black;
+  color: red;
+  border-style: none;
+  margin-left: 3%;
+}
+
+.delete-cart-icon:hover {
+  color: white;
+}
