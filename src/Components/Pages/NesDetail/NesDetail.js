@@ -1,7 +1,7 @@
 import React from 'react';
 import collectionRequests from '../../../helpers/Data/collectionRequests';
 import Utility from '../../../helpers/utils/Utility';
-import './NesDetail.scss';
+import './Nesdetail.scss';
 
 class NesDetail extends React.Component {
   state = {
