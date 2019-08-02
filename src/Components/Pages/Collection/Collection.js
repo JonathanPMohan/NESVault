@@ -70,12 +70,14 @@ class Collection extends React.Component {
     return (
       <div className="myCarts mx-auto animated fadeIn w-100">
         <div className="myCartsWrap">
-          <SearchField
-            placeholder="Search Wish List By Name or Genre"
-            onChange={this.onChange}
-            searchText=""
-            classNames="collectionSearch"
-          />
+          <div className="search-field">
+            <SearchField
+              placeholder="Search Wish List By Name or Genre"
+              onChange={this.onChange}
+              searchText=""
+              classNames="collectionSearch"
+            />
+          </div>
         </div>
         <div className="myCartWindow">
           <div className="row justify-content-center">{printCollection}</div>

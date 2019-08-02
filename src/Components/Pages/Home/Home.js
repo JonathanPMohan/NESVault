@@ -95,7 +95,7 @@ class Home extends React.Component {
   render() {
     const { firebaseId, isEditing } = this.state;
     return (
-      <div className="home mx-auto">
+      <div className="home mx-auto animated fadeIn">
         <h2>Welcome To The NESVault. Choose A Destination Below. </h2>
         <div className="d-flex flex-wrap justify-content-center w-100">
           <div className="card col-3 admin-card m-3" id="profile" onClick={this.changeView}>
