@@ -9,9 +9,19 @@
   cursor: pointer;
 }
 
+.add-cart-button:hover {
+  color: white;
+  background: black;
+}
+
 .magic-wand-button {
   color: red;
   cursor: pointer;
+}
+
+.magic-wand-button:hover {
+  color: white;
+  background: black;
 }
 
 .cart-img {
