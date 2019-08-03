@@ -4,11 +4,14 @@ import userRequests from '../../../helpers/Data/userRequests';
 import authRequests from '../../../helpers/Data/authRequests';
 
 // import NESLogo from '../../../images/nes_vault_logo.png';
+
+// Home Page Image Imports //
 import NEScollection from '../../../images/nes_vault_collection.png';
 import NESdatabase from '../../../images/nes_vault_database.png';
 import NESprofile from '../../../images/nes_vault_profile.png';
 import NEStradelist from '../../../images/nes_vault_tradelist.png';
 import NESwishlist from '../../../images/nes_vault_wishlist.png';
+import NESvideosearch from '../../../images/nes_vault_videos.png';
 
 import './Home.scss';
 
@@ -134,6 +137,14 @@ class Home extends React.Component {
             <div className="text-center">
               <h4 className="card-title">
                 <img src={NEStradelist} className="admin-icon" alt="tradelist" />
+              </h4>
+            </div>
+          </div>
+
+          <div className="card col-3 admin-card m-3" id="videos" onClick={this.changeView}>
+            <div className="text-center">
+              <h4 className="card-title">
+                <img src={NESvideosearch} className="admin-icon" alt="videosearch" />
               </h4>
             </div>
           </div>
