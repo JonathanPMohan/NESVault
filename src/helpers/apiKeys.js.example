@@ -11,6 +11,9 @@ const apiKeys = {
   nesVaultApi: {
     apiBaseUrl: '',
   },
+  youTubeConfig: {
+    apiKey: '',
+  },
 };
 
 export default apiKeys;

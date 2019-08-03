@@ -29,14 +29,12 @@ const getSingleMyCart = id => new Promise((resolve, reject) => {
 const getSingleNesCartClick = id => axios.get(`${nesVaultApiBaseUrl}/api/mycarts/${id}`);
 
 // Create MyCart Call //
-const createMyCart = newMyCart => new Promise((resolve, reject) => {
-  axios
-    .post(`${nesVaultApiBaseUrl}/api/mycarts/`, newMyCart)
-    .then((result) => {
-      resolve(result.data);
-    })
-    .catch(error => reject(error));
-});
+const createMyCart = newMyCart => new Promise((resolve, reject) => axios
+  .post(`${nesVaultApiBaseUrl}/api/mycarts/`, newMyCart)
+  .then((result) => {
+    resolve(result.data);
+  })
+  .catch(error => reject(error)));
 
 // Edit MyCart Call //
 const editMyCart = (id, myCart) => new Promise((resolve, reject) => {

@@ -14,6 +14,7 @@ import TradeList from '../Components/Pages/TradeList/TradeList';
 import NesDetail from '../Components/Pages/NesDetail/NesDetail';
 import WishListDetail from '../Components/Pages/WishListDetail/WishListDetail';
 import CartList from '../Components/Pages/CartList/CartList';
+import NesYouTubeVideos from '../Components/Pages/NesYouTubeVideos/NesYouTubeVideos';
 import authRequests from '../helpers/Data/authRequests';
 import userRequests from '../helpers/Data/userRequests';
 import connection from '../helpers/Data/connection';
@@ -97,9 +98,9 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <button className="test-button" onClick={() => notify('this is a notification')}>
+        {/* <button className="test-button" onClick={() => notify('this is a notification')}>
           on Click
-        </button>
+        </button> */}
         <Notifications />
         <BrowserRouter>
           <React.Fragment>
@@ -131,6 +132,8 @@ class App extends React.Component {
                     )}
                     authed={authed}
                   />
+
+                  <PrivateRoute path="/videos" component={NesYouTubeVideos} authed={authed} />
 
                   <PrivateRoute
                     path="/cartlist"

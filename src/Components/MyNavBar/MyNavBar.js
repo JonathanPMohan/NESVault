@@ -63,6 +63,12 @@ class AppNavbar extends React.Component {
               </NavLink>
             </NavItem>
             <NavItem>
+              <NavLink tag={RRNavLink} to="/videos">
+                <i className="navIcon lnr lnr-film-play lnr-1x" />
+                VIDEOS
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink tag={RRNavLink} onClick={logoutClickEvent} to="/home">
                 <i className="navIcon lnr lnr-exit-up lnr-1x" />
                 LOGOUT
