@@ -1,15 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import Utility from '../../helpers/utils/Utility';
 
 import './PrintCollectionCard.scss';
 
 class PrintCollectionCard extends React.Component {
-  // static propTypes = {
-  //   // deleteMyCartFromCollection: PropTypes.func,
-  //   // userObject: PropTypes.object,
-  // };
-
   myCartClick = () => {
     const { myCart, onSelect } = this.props;
     onSelect(myCart.id);

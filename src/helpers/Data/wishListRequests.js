@@ -28,16 +28,12 @@ const createMyWishListCart = newMyWishListCart => new Promise((resolve, reject) 
 
 const getSingleWishListCartClick = id => axios.get(`${nesVaultApiBaseUrl}/api/wishlist/${id}`);
 
-// const deleteMyCart = myCartId => axios.delete(`${nesVaultApiBaseUrl}/api/mycarts/delete/${myCartId}`);
+const deleteMyCartFromWishlist = myWishListid => axios.delete(`${nesVaultApiBaseUrl}/api/wishlist/delete/${myWishListid}`);
 
 export default {
   getMyWishList,
   createMyWishListCart,
   getSingleWishListCartClick,
-  //   getSingleMyCart,
-  //   createMyCart,
-  //   editMyCart,
-  //   deleteMyCart,
+  deleteMyCartFromWishlist,
   getCurrentUid,
-  //   getSingleMyCartClick,
 };

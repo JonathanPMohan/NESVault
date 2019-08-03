@@ -14,7 +14,7 @@ class WishList extends React.Component {
   };
 
   getWishList = () => {
-    const userDbId = this.props.userObject.id;
+    const userDbId = this.state.currentUserObj.id;
     wishListRequests
       .getMyWishList(userDbId)
       .then((wishList) => {
@@ -26,13 +26,22 @@ class WishList extends React.Component {
       });
   };
 
+  deleteMyWishListCart = (id) => {
+    wishListRequests
+      .deleteMyCartFromWishlist(id)
+      .then(() => {
+        this.getWishList();
+      })
+      .catch(error => console.error('We Could Not Delete Your NESVault Cart.', error));
+  };
+
   componentDidMount() {
     const currentUid = authRequests.getCurrentUid();
-    this.getWishList();
     userRequests.getUserByFbId(currentUid).then((response) => {
       this.setState({
         currentUserObj: response,
       });
+      this.getWishList();
     });
   }
 
@@ -63,7 +72,12 @@ class WishList extends React.Component {
     const { filteredWishList } = this.state;
 
     const printWishList = filteredWishList.map(wishList => (
-      <PrintWishListCard key={wishList.id} wishList={wishList} onSelect={this.onSelect} />
+      <PrintWishListCard
+        key={wishList.id}
+        deleteMyWishListCart={this.deleteMyWishListCart}
+        wishList={wishList}
+        onSelect={this.onSelect}
+      />
     ));
     return (
       <div className="myCarts mx-auto animated fadeIn w-100">
