@@ -3,10 +3,13 @@ import React from 'react';
 import collectionRequests from '../../helpers/Data/collectionRequests';
 import wishListRequests from '../../helpers/Data/wishListRequests';
 import Utility from '../../helpers/utils/Utility';
+
 import './CartListTable.scss';
 
 class CartListTable extends React.Component {
-  state = {};
+  state = {
+    showAlert: false,
+  };
 
   static propTypes = {
     index: PropTypes.number,
