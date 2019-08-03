@@ -19,7 +19,7 @@ import authRequests from '../helpers/Data/authRequests';
 import userRequests from '../helpers/Data/userRequests';
 import connection from '../helpers/Data/connection';
 
-import Notifications, { notify } from '../Components/Notifications/Notifications';
+import Notifications from '../Components/Notifications/Notifications';
 
 import nesLogo from '../images/nes_vault_logo.png';
 
@@ -98,9 +98,6 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        {/* <button className="test-button" onClick={() => notify('this is a notification')}>
-          on Click
-        </button> */}
         <Notifications />
         <BrowserRouter>
           <React.Fragment>

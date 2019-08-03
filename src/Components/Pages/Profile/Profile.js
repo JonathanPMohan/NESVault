@@ -5,10 +5,6 @@ import {
 import userRequests from '../../../helpers/Data/userRequests';
 import authRequests from '../../../helpers/Data/authRequests';
 
-// REACT CHART //
-import '../../../../node_modules/react-vis/dist/style.css';
-import { RadialChart, ChartLabel } from 'react-vis';
-
 import './Profile.scss';
 
 class Profile extends React.Component {
@@ -29,8 +25,6 @@ class Profile extends React.Component {
 
   render() {
     const { userObject, fbUserObject } = this.state;
-
-    const myData = [{ angle: 1 }, { angle: 5 }, { angle: 2 }, { angle: 2 }, { angle: 2 }, { angle: 1 }];
 
     return (
       <div className="Profile animated fadeIn">
@@ -72,11 +66,6 @@ class Profile extends React.Component {
                 </CardBody>
               </Card>
             </div>
-            {/* <div className="pie-chart">
-              <h4>GENRE BREAKDOWN</h4>
-              <RadialChart className="chart-a" data={myData} width={400} height={400} />
-              <RadialChart className="chart-b" data={myData} width={400} height={400} />
-            </div> */}
           </div>
         </div>
       </div>
