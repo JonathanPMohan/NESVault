@@ -14,7 +14,7 @@ class Collection extends React.Component {
   };
 
   getCollection = () => {
-    const userDbId = this.props.userObject.id;
+    const userDbId = this.state.currentUserObj.id;
     collectionRequests
       .getAllMyCarts(userDbId)
       .then((myCarts) => {
@@ -26,13 +26,22 @@ class Collection extends React.Component {
       });
   };
 
+  deleteMyCart = (id) => {
+    collectionRequests
+      .deleteMyCartFromCollection(id)
+      .then(() => {
+        this.getCollection();
+      })
+      .catch(error => console.error('We Could Not Delete Your NESVault Cart.', error));
+  };
+
   componentDidMount() {
     const currentUid = authRequests.getCurrentUid();
-    this.getCollection();
     userRequests.getUserByFbId(currentUid).then((response) => {
       this.setState({
         currentUserObj: response,
       });
+      this.getCollection();
     });
   }
 
@@ -64,7 +73,7 @@ class Collection extends React.Component {
     const { filteredMyCarts } = this.state;
 
     const printCollection = filteredMyCarts.map(myCart => (
-      <PrintCollectionCard key={myCart.id} myCart={myCart} onSelect={this.onSelect} />
+      <PrintCollectionCard key={myCart.id} deleteMyCart={this.deleteMyCart} myCart={myCart} onSelect={this.onSelect} />
     ));
 
     return (

@@ -1,18 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Utility from '../../helpers/utils/Utility';
 
 import './PrintCollectionCard.scss';
 
 class PrintCollectionCard extends React.Component {
-  static propTypes = {
-    deleteSingleProduct: PropTypes.func,
-    // userObject: PropTypes.object,
-  };
+  // static propTypes = {
+  //   // deleteMyCartFromCollection: PropTypes.func,
+  //   // userObject: PropTypes.object,
+  // };
 
   myCartClick = () => {
     const { myCart, onSelect } = this.props;
     onSelect(myCart.id);
+  };
+
+  deleteCart = (e) => {
+    e.preventDefault();
+    const { deleteMyCart, myCart } = this.props;
+    deleteMyCart(myCart.id);
   };
 
   render() {
@@ -21,7 +27,7 @@ class PrintCollectionCard extends React.Component {
     return (
       <div className="myCartCard col-2">
         <img className="myCartImage" src={myCart.imageUrl} alt={myCart.id} />
-        <div className="cart-card-body" onClick={this.myCartClick}>
+        <div className="cart-card-body">
           <h5 className="card-text">
             <h4 className="collection-name">{myCart.name}</h4>
             <h6 className="collection-genre">{myCart.genre}</h6>
@@ -31,7 +37,7 @@ class PrintCollectionCard extends React.Component {
               INFO
               <span className="lnr lnr-list cart-info-icon" />
             </button>
-            <button className="delete-cart-button" onClick={this.deleteCart}>
+            <button className="delete-cart-button" id={myCart.id} onClick={this.deleteCart}>
               <span className="lnr lnr-cross-circle delete-cart-icon" />
             </button>
           </h5>

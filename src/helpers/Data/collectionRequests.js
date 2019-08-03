@@ -46,14 +46,14 @@ const editMyCart = (id, myCart) => new Promise((resolve, reject) => {
     .catch(error => reject(error));
 });
 
-const deleteMyCart = myCartId => axios.delete(`${nesVaultApiBaseUrl}/api/mycarts/delete/${myCartId}`);
+const deleteMyCartFromCollection = myCartId => axios.delete(`${nesVaultApiBaseUrl}/api/mycarts/delete/${myCartId}`);
 
 export default {
   getAllMyCarts,
   getSingleMyCart,
   createMyCart,
   editMyCart,
-  deleteMyCart,
+  deleteMyCartFromCollection,
   getCurrentUid,
   getSingleNesCartClick,
 };
