@@ -98,9 +98,9 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <button className="test-button" onClick={() => notify('this is a notification')}>
+        {/* <button className="test-button" onClick={() => notify('this is a notification')}>
           on Click
-        </button>
+        </button> */}
         <Notifications />
         <BrowserRouter>
           <React.Fragment>

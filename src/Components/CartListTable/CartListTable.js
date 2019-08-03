@@ -5,6 +5,7 @@ import wishListRequests from '../../helpers/Data/wishListRequests';
 import Utility from '../../helpers/utils/Utility';
 
 import './CartListTable.scss';
+import { notify } from '../Notifications/Notifications';
 
 class CartListTable extends React.Component {
   state = {
@@ -22,6 +23,7 @@ class CartListTable extends React.Component {
     cart.cartsId = cart.id;
 
     collectionRequests.createMyCart(cart);
+    notify('did the thing');
   };
 
   addToMyWishList = (e) => {
@@ -31,6 +33,7 @@ class CartListTable extends React.Component {
     cart.cartId = cart.id;
 
     wishListRequests.createMyWishListCart(cart);
+    notify('did the thing');
   };
 
   render() {

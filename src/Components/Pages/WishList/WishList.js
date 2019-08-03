@@ -46,7 +46,7 @@ class WishList extends React.Component {
       wishList.forEach((myCart) => {
         if (
           myCart.name.toLowerCase().includes(value.toLowerCase())
-          || myCart.description.toLowerCase().includes(value.toLowerCase())
+          || myCart.genre.toLowerCase().includes(value.toLowerCase())
         ) {
           filteredWishList.push(myCart);
         }
@@ -75,7 +75,7 @@ class WishList extends React.Component {
             classNames="wishlistSearch"
           />
         </div>
-        <h1>ISO Stadium Events, LOL</h1>
+        <h1>ISO Stadium Events, Little Samson & Panic Restaurant... LOL</h1>
         <div className="wish-list-window">
           <div className="row justify-content-center">{printWishList}</div>
         </div>
