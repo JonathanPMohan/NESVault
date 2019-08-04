@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchField from 'react-search-field';
 
+import YouTube from '../../images/youtube.png';
+
 class VideoSearch extends React.Component {
   state = {
     searchValue: '',
@@ -20,15 +22,6 @@ class VideoSearch extends React.Component {
 
     return (
       <div className="search-field">
-        {/* <SearchField
-          placeholder="Search YouTube For NES Videos"
-          onChange={this.handleChange}
-          searchText=""
-          classNames="nes-videos-search"
-          onEnter={this.formSubmit}
-          value={searchValue}
-        /> */}
-
         <SearchField
           placeholder="Search YouTube For NES Videos"
           onChange={this.handleChange}
@@ -37,6 +30,7 @@ class VideoSearch extends React.Component {
           onEnter={this.formSubmit}
           value={searchValue}
         />
+        <img src={YouTube} className="youtube-icon" alt="youtube-logo" />
       </div>
     );
   }

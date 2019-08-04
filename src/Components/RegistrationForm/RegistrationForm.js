@@ -108,7 +108,7 @@ class RegistrationForm extends React.Component {
   };
 
   render() {
-    const { newUser, isLoading, isEditing } = this.state;
+    const { newUser, isEditing } = this.state;
     return (
       <div className="Registration-Form">
         <Modal
