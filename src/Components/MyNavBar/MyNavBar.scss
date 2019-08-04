@@ -1,6 +1,7 @@
 .nesNavLogo {
-  width: 20%;
+  width: 80%;
   float: left;
+  margin-left: 5%;
 }
 
 .navIcon {
@@ -10,12 +11,15 @@
   color: red;
 }
 
+.music-icon {
+  margin-top: 0.6%;
+}
 .profIcon {
-  height: 35px;
+  height: 38px;
   border-radius: 7px;
   border: 2px solid white;
-  margin-left: 1%;
   margin-right: 5%;
+  margin-left: 5px;
 }
 
 .navIcon[class*="lnr-"] {
@@ -37,4 +41,9 @@
 
 .nav-link:hover {
   color: red !important;
+}
+
+.chip-music {
+  margin-right: 25px;
+  margin-top: 5px;
 }
