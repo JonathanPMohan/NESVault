@@ -32,7 +32,7 @@ class AppNavbar extends React.Component {
                 width="200"
                 height="25"
                 src="https://www.youtube.com/embed/B7tBCw24aKo"
-                frameborder="1"
+                frameborder="2"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               />
             </NavItem>
@@ -57,7 +57,7 @@ class AppNavbar extends React.Component {
             <NavItem>
               <NavLink tag={RRNavLink} to="/cartlist">
                 <i className="navIcon lnr lnr-list lnr-1x" />
-                CARTLIST
+                DATABASE
               </NavLink>
             </NavItem>
             <NavItem>
