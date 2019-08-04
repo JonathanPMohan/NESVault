@@ -26,6 +26,16 @@ class AppNavbar extends React.Component {
       if (isAuthed) {
         return (
           <Nav className="ml-auto" navbar>
+            <i className="navIcon music-icon lnr lnr-music-note lnr-1x" />
+            <NavItem className="chip-music">
+              <iframe
+                width="200"
+                height="25"
+                src="https://www.youtube.com/embed/B7tBCw24aKo"
+                frameborder="1"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              />
+            </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/home">
                 <i className="navIcon lnr lnr-home lnr-1x" />
