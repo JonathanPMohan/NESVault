@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import collectionRequests from '../../helpers/Data/collectionRequests';
 import wishListRequests from '../../helpers/Data/wishListRequests';
+// import tradeListRequests from '../../helpers/Data/tradeListRequests';
 import Utility from '../../helpers/utils/Utility';
+import Notifications from '../Notifications/Notifications';
 
 import './CartListTable.scss';
 import { notify } from '../Notifications/Notifications';
@@ -36,6 +38,16 @@ class CartListTable extends React.Component {
     notify('did the thing');
   };
 
+  // addToTradeList = (e) => {
+  //   e.preventDefault();
+  //   const { cart, userObject } = this.props;
+  //   cart.userId = userObject.id;
+  //   cart.cartId = cart.id;
+
+  //   tradeListRequests.createTradeListCart(cart);
+  //   notify('did the thing');
+  // };
+
   render() {
     const { cart, index } = this.props;
     const rowNumber = (index + 1).toString();
@@ -54,10 +66,14 @@ class CartListTable extends React.Component {
         <td className="cib">${cart.cib}</td>
         <td className="nes">${cart.new}</td>
         <td className="icons">
+          <Notifications />
           <i className="add-cart-button lnr lnr-plus-circle" id={cart.id} onClick={this.addToMyCollection} />
         </td>
         <td className="icons">
           <i className="magic-wand-button lnr lnr-magic-wand" id={cart.id} onClick={this.addToMyWishList} />
+        </td>
+        <td className="icons">
+          <i className="wish-list-button lnr lnr-gift" id={cart.id} onClick={this.addToTradeList} />
         </td>
       </tr>
     );

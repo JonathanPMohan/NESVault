@@ -3,6 +3,7 @@ import cartRequests from '../../../helpers/Data/cartRequests';
 import authRequests from '../../../helpers/Data/authRequests';
 import userRequests from '../../../helpers/Data/userRequests';
 import CartListTable from '../../CartListTable/CartListTable';
+
 import './CartList.scss';
 
 class CartList extends React.Component {
@@ -78,6 +79,7 @@ class CartList extends React.Component {
                 <th scope="col">NEW</th>
                 <th scope="col">ADD</th>
                 <th scope="col">WISH</th>
+                <th scope="col">TRADE</th>
               </tr>
             </thead>
             <tbody>{printCart}</tbody>

@@ -19,8 +19,6 @@ import authRequests from '../helpers/Data/authRequests';
 import userRequests from '../helpers/Data/userRequests';
 import connection from '../helpers/Data/connection';
 
-import Notifications from '../Components/Notifications/Notifications';
-
 import nesLogo from '../images/nes_vault_logo.png';
 
 import './App.scss';
@@ -98,7 +96,6 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Notifications />
         <BrowserRouter>
           <React.Fragment>
             <MyNavBar isAuthed={authed} logoutClickEvent={logoutClickEvent} userObject={userObject} />

@@ -28,7 +28,7 @@ class Notifications extends React.Component {
     super(props);
 
     this.state = {
-      top: -100,
+      top: -200,
       msg: '',
     };
 

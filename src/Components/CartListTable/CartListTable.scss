@@ -24,6 +24,16 @@
   background: black;
 }
 
+.wish-list-button {
+  color: red;
+  cursor: pointer;
+}
+
+.wish-list-button:hover {
+  color: white;
+  background: black;
+}
+
 .cart-img {
   width: 35%;
 }
