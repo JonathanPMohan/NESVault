@@ -28,13 +28,15 @@ class NesYouTubeVideos extends React.Component {
 
     return (
       <div className="nes-youtube-container animated fadeIn">
-        <VideoSearch handleFormSubmit={this.handleSubmit} />
         <div className="w-100 mx-auto">
-          <div className="mt-3 mx-auto">
+          <div className="mx-auto" />
+          <div className="video-list animated fadeIn">
+            <h1>Search Videos On Your Favorite Games!</h1>
+            <VideoSearch handleFormSubmit={this.handleSubmit} />
             <VideoDetail video={selectedVideo} />
-          </div>
-          <div className="animated fadeIn">
-            <VideoList handleVideoSelect={this.handleVideoSelect} videos={videos} />
+            <div className="video-list-wrapper">
+              <VideoList handleVideoSelect={this.handleVideoSelect} videos={videos} />
+            </div>
           </div>
         </div>
       </div>
