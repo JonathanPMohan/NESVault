@@ -4,6 +4,7 @@ import {
 } from 'reactstrap';
 import userRequests from '../../../helpers/Data/userRequests';
 import authRequests from '../../../helpers/Data/authRequests';
+import Example from '../../GenrePieChart/GenrePieChart';
 
 import './Profile.scss';
 
@@ -65,6 +66,7 @@ class Profile extends React.Component {
                   </Button>
                 </CardBody>
               </Card>
+              <Example />
             </div>
           </div>
         </div>
