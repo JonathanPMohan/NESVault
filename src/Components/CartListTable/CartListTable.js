@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import collectionRequests from '../../helpers/Data/collectionRequests';
 import wishListRequests from '../../helpers/Data/wishListRequests';
-// import tradeListRequests from '../../helpers/Data/tradeListRequests';
+import tradeListRequests from '../../helpers/Data/tradeListRequests';
 import Utility from '../../helpers/utils/Utility';
 import Notifications from '../Notifications/Notifications';
 
@@ -38,15 +38,15 @@ class CartListTable extends React.Component {
     notify('did the thing');
   };
 
-  // addToTradeList = (e) => {
-  //   e.preventDefault();
-  //   const { cart, userObject } = this.props;
-  //   cart.userId = userObject.id;
-  //   cart.cartId = cart.id;
+  addToTradeList = (e) => {
+    e.preventDefault();
+    const { cart, userObject } = this.props;
+    cart.userId = userObject.id;
+    cart.cartId = cart.id;
 
-  //   tradeListRequests.createTradeListCart(cart);
-  //   notify('did the thing');
-  // };
+    tradeListRequests.createMyTradeListCart(cart);
+    notify('did the thing');
+  };
 
   render() {
     const { cart, index } = this.props;

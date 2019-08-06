@@ -88,6 +88,7 @@ class CartList extends React.Component {
 
     return (
       <div className="cart-list mx-auto animated fadeIn w-100">
+        <h1>Search Database By NES Title Or Genre </h1>
         <div className="search-field">
           <SearchField
             placeholder="Search Database By Name or Genre"
