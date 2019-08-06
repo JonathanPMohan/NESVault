@@ -42,7 +42,12 @@ class Profile extends React.Component {
                 />
                 <CardHeader>
                   <h2>
-                    <b>{`${userObject.userName}`}</b>
+                    <b>
+                      {`${userObject.userName}`}
+                      <Button color="black" className="edit-profile-button-top">
+                        EDIT
+                      </Button>
+                    </b>
                   </h2>
                 </CardHeader>
                 <CardBody>
@@ -54,16 +59,19 @@ class Profile extends React.Component {
                     <p>
                       <b>TOTAL WORTH:</b> $1256
                     </p>
-                    <p>
+                    {/* <p>
                       <b>MOST VALUABLE:</b> {`${userObject.favoriteGame}`}
+                    </p> */}
+                    <p>
+                      <b>MOST VALUABLE:</b> Mega Man 5
                     </p>
                     <p>
                       <b>FAVORITE GAME:</b> {`${userObject.favoriteGame}`}
                     </p>
                   </CardText>
-                  <Button color="black" className="edit-profile-button">
+                  {/* <Button color="black" className="edit-profile-button">
                     EDIT
-                  </Button>
+                  </Button> */}
                 </CardBody>
               </Card>
               <div className="pie-chart animated fadeIn">
