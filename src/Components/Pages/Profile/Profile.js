@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import userRequests from '../../../helpers/Data/userRequests';
 import authRequests from '../../../helpers/Data/authRequests';
-import Example from '../../GenrePieChart/GenrePieChart';
+import GenrePieChart from '../../GenrePieChart/GenrePieChart';
 
 import './Profile.scss';
 
@@ -48,7 +48,7 @@ class Profile extends React.Component {
                 <CardBody>
                   <CardText>
                     <h5>
-                      <b>CART COUNT:</b> 365
+                      <b>CART COUNT:</b> 365 of 716
                     </h5>
                     <p />
                     <p>
@@ -66,7 +66,9 @@ class Profile extends React.Component {
                   </Button>
                 </CardBody>
               </Card>
-              <Example />
+              <div className="pie-chart animated fadeIn">
+                <GenrePieChart className="genre-pie-chart" />
+              </div>
             </div>
           </div>
         </div>
