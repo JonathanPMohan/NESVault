@@ -7,7 +7,7 @@ import collectionRequests from '../../helpers/Data/collectionRequests';
 import userRequests from '../../helpers/Data/userRequests';
 import authRequests from '../../helpers/Data/authRequests';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#6600CC', '#99FF00', '#097054'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -24,14 +24,18 @@ const renderCustomizedLabel = ({
   );
 };
 
-export default class Example extends PureComponent {
-  //   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c9pL8k61/';
+export default class GenrePieChart extends PureComponent {
   state = {
     myCartsGenres: [],
     filteredMyCartsGenres: [],
     currentUserObj: {},
     adventureTally: 0,
     sportsTally: 0,
+    puzzleTally: 0,
+    rpgTally: 0,
+    fightingTally: 0,
+    otherTally: 0,
+    arcadeTally: 0,
   };
 
   getCollectionByGenre = () => {
@@ -41,6 +45,8 @@ export default class Example extends PureComponent {
     let sportsTally = 0;
     let rpgTally = 0;
     let fightingTally = 0;
+    let otherTally = 0;
+    let arcadeTally = 0;
 
     collectionRequests
       .getAllMyCartsGenres(userDbId)
@@ -48,7 +54,7 @@ export default class Example extends PureComponent {
         myCartsGenres.forEach((cart) => {
           if (cart.genre === 'Action/Adventure') {
             adventureTally += 1;
-          } else if (cart.genre === 'Puzzle') {
+          } else if (cart.genre === 'Puzzle' || cart.genre === 'Strategy') {
             puzzleTally += 1;
           } else if (
             cart.genre === 'Sports'
@@ -63,6 +69,10 @@ export default class Example extends PureComponent {
             rpgTally += 1;
           } else if (cart.genre === 'Fighting') {
             fightingTally += 1;
+          } else if (cart.genre === 'Other') {
+            otherTally += 1;
+          } else if (cart.genre === 'Arcade') {
+            arcadeTally += 1;
           }
         });
         this.setState({ myCartsGenres });
@@ -72,6 +82,8 @@ export default class Example extends PureComponent {
         this.setState({ rpgTally });
         this.setState({ puzzleTally });
         this.setState({ fightingTally });
+        this.setState({ otherTally });
+        this.setState({ arcadeTally });
       })
       .catch((err) => {
         console.error('error with NESVault Collection Genre GET', err);
@@ -95,17 +107,19 @@ export default class Example extends PureComponent {
       { name: 'RPG', value: this.state.rpgTally },
       { name: 'Puzzle', value: this.state.puzzleTally },
       { name: 'Fighting', value: this.state.fightingTally },
+      { name: 'Other', value: this.state.otherTally },
+      { name: 'Arcade', value: this.state.arcadeTally },
     ];
 
     return (
-      <PieChart width={400} height={400}>
+      <PieChart width={700} height={600}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
+          cx={350}
+          cy={350}
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={80}
+          outerRadius={200}
           fill="#8884d8"
           dataKey="value"
         >
@@ -113,11 +127,9 @@ export default class Example extends PureComponent {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend />
+        <Legend className="genre-legend" />
         {/* <PieChart name="Group A" data={data} fill="#8884d8" line shape="cross" /> */}
       </PieChart>
     );
   }
 }
-
-// export default GenrePieChart;
