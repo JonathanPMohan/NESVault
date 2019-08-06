@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchField from 'react-search-field';
 import cartRequests from '../../../helpers/Data/cartRequests';
 import authRequests from '../../../helpers/Data/authRequests';
 import userRequests from '../../../helpers/Data/userRequests';
@@ -17,6 +18,7 @@ class CartList extends React.Component {
   state = {
     carts: [],
     userObject: {},
+    filteredCarts: [],
     CartListTable: [],
   };
 
@@ -50,21 +52,50 @@ class CartList extends React.Component {
     });
   }
 
+  onChange = (value, event) => {
+    const { carts } = this.state;
+    const filteredCarts = [];
+    event.preventDefault();
+    if (!value) {
+      this.setState({ filteredCarts: carts });
+    } else {
+      carts.forEach((cart) => {
+        if (
+          cart.name.toLowerCase().includes(value.toLowerCase())
+          || cart.name.toLowerCase().includes(value.toLowerCase())
+          || cart.genre.toLowerCase().includes(value.toLowerCase())
+        ) {
+          filteredCarts.push(cart);
+        }
+        this.setState({ filteredCarts });
+      });
+    }
+  };
+
   componentWillUnmount() {
     this.partnerMounted = false;
   }
 
   render() {
     // const { userObject } = this.props;
-    const { carts } = this.state;
+    // const { carts } = this.state;
     const { userObject } = this.props;
+    const { filteredCarts } = this.state;
 
-    const printCart = carts.map((cart, index) => (
+    const printCart = filteredCarts.map((cart, index) => (
       <CartListTable key={cart.id} index={index} cart={cart} onSelect={this.onSelect} userObject={userObject} />
     ));
 
     return (
       <div className="cart-list mx-auto animated fadeIn w-100">
+        <div className="search-field">
+          <SearchField
+            placeholder="Search Database By Name or Genre"
+            onChange={this.onChange}
+            searchText=""
+            classNames="collectionSearch"
+          />
+        </div>
         <div className="table-responsive">
           <table className="cart-list-table table table-striped">
             <thead>
