@@ -16,6 +16,16 @@ const getAllMyCarts = userDbId => new Promise((resolve, reject) => {
     .catch(error => reject(error));
 });
 
+// Get Genres From MyCarts For Profile Page //
+const getAllMyCartsGenres = genres => new Promise((resolve, reject) => {
+  axios
+    .get(`${nesVaultApiBaseUrl}/api/mycarts/genre/${genres}`)
+    .then((result) => {
+      resolve(result.data);
+    })
+    .catch(error => reject(error));
+});
+
 // Get Single MyCart By ID //
 const getSingleMyCart = id => new Promise((resolve, reject) => {
   axios
@@ -52,6 +62,7 @@ export default {
   getAllMyCarts,
   getSingleMyCart,
   createMyCart,
+  getAllMyCartsGenres,
   editMyCart,
   deleteMyCartFromCollection,
   getCurrentUid,
