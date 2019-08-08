@@ -20,7 +20,7 @@ class PrintCollectionCard extends React.Component {
 
     return (
       <div className="myCartCard col-2">
-        <img className="myCartImage" src={myCart.imageUrl} alt={myCart.id} />
+        <img className="myCartImg" src={require(`../../images/carts/${myCart.productId}.jpg`)} />
         <div className="cart-card-body">
           <h5 className="card-text">
             <h4 className="collection-name">{myCart.name}</h4>
