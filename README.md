@@ -22,16 +22,35 @@ After authorization with your google account the database is checked for an exis
 
 ## Screenshots
 
-![Auth Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/auth.png)
-![Home Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/home.png)
-![Database Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/database.png)
-![Profile Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/profile.png)
-![Collection Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/collection.png)
-![Collection Detail Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/detail.png)
-![WishList Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/trade.png)
-![TradeList Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/wish.png)
-![VideoPage Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/video.png)
-![VideoPage2 Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/video2.png)
+- Auth
+  ![Auth Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/auth.png)
+
+- Home
+  ![Home Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/home.png)
+
+- Database
+  ![Database Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/database.png)
+
+- Profile
+  ![Profile Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/profile.png)
+
+- Collection
+  ![Collection Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/collection.png)
+
+- Detail
+  ![Collection Detail Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/detail.png)
+
+- WishList
+  ![WishList Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/trade.png)
+
+- TradeList
+  ![TradeList Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/wish.png)
+
+- Videos
+  ![VideoPage Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/video.png)
+
+- Video Page
+  ![VideoPage2 Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/video2.png)
 
 ## How to run this project:
 
