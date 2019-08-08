@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NESVault
 
-## Available Scripts
+The NESVault is my E8 Final Backend Capstone. I've always been a huge fan of retro videos games and have been an avid collector for many years. In the last five years of so, the amount of NES collectors across the globe has grown rapidly. With the limited supply of these classic games from the 80's and early 90's, the value of individula titles have begun to rise.
 
-In the project directory, you can run:
+I wanted to provide the ability for individual NES collectors to keep track of their personal collection, tally the entire the worth and total counts of carts they hold. Along with your own personal collection, I wanted to provide them with the abilty to build a wish list of games they're searching for as well as a trade list of games they're willing to part ways with. After finding an amazing API to access the entire database of NES titles, I then built the database within the app allowing users to add to the corresponding lists depending on the titles they hold in the collection.
 
-### `npm start`
+For fun I added a section to where they can search YouTube for videos of their favorite games as well as a way to play chip tone 8 bit music from their favorite games and more. Being the lifelong fan I am, I basically provided a hub for afficinados and collectors alike to just have a place to call home.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+After authorization with your google account the database is checked for an existing Firebase ID. If no user is found, the registration modal pops up to register. You don't have to register to use the app, as the database is open to anyone, but you won't be able to add any titles to any of your lists. I have provided the ability to edit your profile including your username and favorite game. I chose to not take any info such as phone or address, because I didn't deem it necessary for my app.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Tech Used
 
-### `npm test`
+- React.js
+- C#/.Net/
+- Boostrap
+- SCSS
+- Reactstrap
+- React libraries including React Search Field and React Animated CSS
+- Outside API
+- Sql
+- Planning with Github Projects
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+![Auth Screenshot]()
+![Home Screenshot]()
+![Database Screenshot]()
+![Collection Screenshot]()
+![Collection Detail Screenshot]()
+![WishList Screenshot]()
+![TradeList Screenshot]()
+![VideoPage Screenshot]()
+![VideoPage2 Screenshot]()
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to run this project:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- Setup Firebase  
+  -Create a firebase project  
+  -Enable 'Google Authentication'  
+  -Create an apiKeys.js file (an example file exists in the 'helpers' folder)
+  -Copy firebase keys from firebase web app settings into apiKeys.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Clone or download the repo
 
-### `npm run eject`
+- Browse to the repo directory in your terminal
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- run `npm install` to install necessary dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Run the project from Visual Studio
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Special Thanks Goes To:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Nathan Gonzalez (NSS E8 Backend Chief Instructor & Satirical Madman)
+- Martin Cross (NSS E8 Backend Assistant Instructor & Professional Nerd)
+- Adam Wieckert (NSS E8 Backend Assistant Instructor & Capstone Mentor)
+- Zoe Ames (NSS E8 Front End Instructor & Evil Genius)
+- JJ Hendricks (Purveyor of Price Charting.com & Rapid Responder To Emails )
+- Marco Crank (Friend, Mentor & Troubleshooting Guru)
+- Shane Wilson (Friend, Mentor & Never Ending Support)
+- Matt Kelly (Life Long Friend & Coding Mentor)
+- Fusajiro Yamauchi (Creator of the All Powerful Nintendo Entertainment System)
