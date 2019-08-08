@@ -4,6 +4,7 @@ import {
 } from 'reactstrap';
 import userRequests from '../../../helpers/Data/userRequests';
 import authRequests from '../../../helpers/Data/authRequests';
+import collectionRequests from '../../../helpers/Data/collectionRequests';
 import GenrePieChart from '../../GenrePieChart/GenrePieChart';
 
 import './Profile.scss';
@@ -12,6 +13,30 @@ class Profile extends React.Component {
   state = {
     userObject: {},
     fbUserObject: {},
+    myCartsCount: 0,
+    myCarts: [],
+    greatestValue: {},
+    greatestPrice: 0,
+  };
+
+  getCollection = () => {
+    const userDbId = this.state.userObject.id;
+    collectionRequests
+      .getAllMyCarts(userDbId)
+      .then((myCarts) => {
+        const greatestValue = myCarts.reduce((a, b) => (b.loose > a.loose ? b : a));
+        const greatestPrice = greatestValue.loose.toFixed(2);
+        // greatestPrice.toFixed(2);
+        this.setState({
+          myCartsCount: myCarts.length,
+          myCarts,
+          greatestValue,
+          greatestPrice,
+        });
+      })
+      .catch((err) => {
+        console.error('error with NESVault Collection GET', err);
+      });
   };
 
   componentDidMount() {
@@ -21,11 +46,25 @@ class Profile extends React.Component {
         userObject: currentUser,
         fbUserObject: fbUser.providerData[0],
       });
+      this.getCollection();
     });
   }
 
   render() {
-    const { userObject, fbUserObject } = this.state;
+    const {
+      userObject, fbUserObject, myCartsCount, greatestValue, greatestPrice,
+    } = this.state;
+
+    const myCarts = [...this.state.myCarts];
+
+    const getCollectionValue = () => {
+      let collectionValue = 0;
+
+      myCarts.forEach((cart) => {
+        collectionValue += cart.loose;
+      });
+      return collectionValue;
+    };
 
     return (
       <div className="Profile animated fadeIn">
@@ -53,17 +92,17 @@ class Profile extends React.Component {
                 <CardBody>
                   <CardText>
                     <h5>
-                      <b>CART COUNT:</b> 365 of 716
+                      <b>CART COUNT:</b> {myCartsCount} of 716
                     </h5>
                     <p />
                     <p>
-                      <b>TOTAL WORTH:</b> $1256
+                      <b>TOTAL WORTH:</b> ${getCollectionValue()}
                     </p>
                     {/* <p>
                       <b>MOST VALUABLE:</b> {`${userObject.favoriteGame}`}
                     </p> */}
                     <p>
-                      <b>MOST VALUABLE:</b> Mega Man 5
+                      <b>MOST VALUABLE:</b> {greatestValue.name} ${greatestPrice}
                     </p>
                     <p>
                       <b>FAVORITE GAME:</b> {`${userObject.favoriteGame}`}
