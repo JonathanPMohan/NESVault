@@ -102,7 +102,7 @@ class RegistrationForm extends React.Component {
     const myNewUser = { ...this.state.newUser };
     onSubmit(myNewUser);
     this.setState({
-      showModal: false,
+      modal: false,
       newUser: defaultUser,
     });
   };

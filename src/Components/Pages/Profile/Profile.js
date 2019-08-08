@@ -3,6 +3,7 @@ import {
   Card, CardImg, CardText, CardBody, Button, CardHeader,
 } from 'reactstrap';
 import userRequests from '../../../helpers/Data/userRequests';
+import RegisterForm from '../../RegistrationForm/RegistrationForm';
 import authRequests from '../../../helpers/Data/authRequests';
 import collectionRequests from '../../../helpers/Data/collectionRequests';
 import GenrePieChart from '../../GenrePieChart/GenrePieChart';
@@ -17,6 +18,9 @@ class Profile extends React.Component {
     myCarts: [],
     greatestValue: {},
     greatestPrice: 0,
+    showModal: false,
+    isEditing: false,
+    userToEdit: {},
   };
 
   getCollection = () => {
@@ -39,6 +43,16 @@ class Profile extends React.Component {
       });
   };
 
+  getSingleUser = () => {
+    const fbUser = authRequests.getCurrentUser();
+    userRequests.getUserByFbId(fbUser.uid).then((currentUser) => {
+      this.setState({
+        userObject: currentUser,
+        fbUserObject: fbUser.providerData[0],
+      });
+    });
+  };
+
   componentDidMount() {
     const fbUser = authRequests.getCurrentUser();
     userRequests.getUserByFbId(fbUser.uid).then((currentUser) => {
@@ -47,12 +61,61 @@ class Profile extends React.Component {
         fbUserObject: fbUser.providerData[0],
       });
       this.getCollection();
+      // this.getSingleUser();
     });
   }
 
+  showModal = (e) => {
+    this.setState({
+      showModal: true,
+    });
+  };
+
+  modalCloseEvent = () => {
+    this.setState({
+      showModal: false,
+      userToEdit: {},
+    });
+  };
+
+  editUserItem = (userId) => {
+    const fbUserId = this.props.userObject.fireBaseUid;
+    userRequests.getUserByFbId(fbUserId).then((currentUser) => {
+      const tempUser = currentUser;
+      this.setState({
+        isEditing: true,
+        userToEdit: tempUser,
+      });
+    });
+    this.showModal();
+  };
+
+  userFormSubmitEvent = (newUser) => {
+    // const { updateUser } = this.props;
+    userRequests
+      .updateUser(newUser)
+      .then((result) => {
+        // updateUser();
+        this.setState({
+          showModal: false,
+          isEditing: false,
+          userToEdit: {},
+        });
+        this.getSingleUser();
+      })
+      .catch(error => console.error('There was an error updating the user', error));
+  };
+
   render() {
     const {
-      userObject, fbUserObject, myCartsCount, greatestValue, greatestPrice,
+      userObject,
+      fbUserObject,
+      myCartsCount,
+      greatestValue,
+      greatestPrice,
+      showModal,
+      isEditing,
+      userToEdit,
     } = this.state;
 
     const myCarts = [...this.state.myCarts];
@@ -68,6 +131,15 @@ class Profile extends React.Component {
 
     return (
       <div className="Profile animated fadeIn">
+        <RegisterForm
+          showModal={showModal}
+          onSubmit={this.userFormSubmitEvent}
+          isEditing={isEditing}
+          userToEdit={userToEdit}
+          modalCloseEvent={this.modalCloseEvent}
+          editForm={this.editUserItem}
+          fireBaseId={userObject.fireBaseUid}
+        />
         <div className="container">
           <div className="row">
             <div className="col-sm-4 profile-container">
@@ -81,36 +153,33 @@ class Profile extends React.Component {
                 />
                 <CardHeader>
                   <h2>
-                    <b>
-                      {`${userObject.userName}`}
-                      <Button color="black" className="edit-profile-button-top">
-                        EDIT
-                      </Button>
-                    </b>
+                    <b>{`${userObject.userName}`}</b>
                   </h2>
+                  <Button
+                    color="black"
+                    className="edit-profile-button-top"
+                    id={userObject.id}
+                    onClick={this.editUserItem}
+                  >
+                    EDIT
+                  </Button>
                 </CardHeader>
                 <CardBody>
                   <CardText>
-                    <h5>
+                    <h4>
                       <b>CART COUNT:</b> {myCartsCount} of 716
-                    </h5>
+                    </h4>
                     <p />
-                    <p>
+                    <h4>
                       <b>TOTAL WORTH:</b> ${getCollectionValue()}
-                    </p>
-                    {/* <p>
-                      <b>MOST VALUABLE:</b> {`${userObject.favoriteGame}`}
-                    </p> */}
-                    <p>
-                      <b>MOST VALUABLE:</b> {greatestValue.name} ${greatestPrice}
-                    </p>
-                    <p>
+                    </h4>
+                    <h6>
+                      <b>MOST VALUABLE:</b> {greatestValue.name} | ${greatestPrice}
+                    </h6>
+                    <h6>
                       <b>FAVORITE GAME:</b> {`${userObject.favoriteGame}`}
-                    </p>
+                    </h6>
                   </CardText>
-                  {/* <Button color="black" className="edit-profile-button">
-                    EDIT
-                  </Button> */}
                 </CardBody>
               </Card>
               <div className="pie-chart animated fadeIn">

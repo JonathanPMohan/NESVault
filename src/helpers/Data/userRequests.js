@@ -25,6 +25,7 @@ const createUser = newUser => new Promise((resolve, reject) => {
 });
 
 const updateUser = newUser => new Promise((resolve, reject) => {
+  console.log(newUser);
   axios
     .put(`${nesVaultApiBaseUrl}/api/Users/${newUser.id}`, newUser)
     .then((result) => {
