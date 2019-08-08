@@ -52,7 +52,7 @@ export default class GenrePieChart extends PureComponent {
       .getAllMyCartsGenres(userDbId)
       .then((myCartsGenres) => {
         myCartsGenres.forEach((cart) => {
-          if (cart.genre === 'Action/Adventure') {
+          if (cart.genre === 'Action/Adventure' || cart.genre === 'Action & Adventure') {
             adventureTally += 1;
           } else if (cart.genre === 'Puzzle' || cart.genre === 'Strategy') {
             puzzleTally += 1;

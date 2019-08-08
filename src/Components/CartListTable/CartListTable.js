@@ -51,6 +51,12 @@ class CartListTable extends React.Component {
   render() {
     const { cart, index } = this.props;
     const rowNumber = (index + 1).toString();
+
+    const convertToCurrency = (price) => {
+      const newPrice = price.toFixed(2);
+      return newPrice;
+    };
+
     return (
       <tr className="cart-item ml-auto">
         <th className="header" scope="row">
@@ -63,9 +69,9 @@ class CartListTable extends React.Component {
         <td className="name">{cart.name}</td>
         <td className="genre">{cart.genre}</td>
         <td className="release-date">{Utility.dateFormat(cart.releaseDate)}</td>
-        <td className="loose">${cart.loose}</td>
-        <td className="cib">${cart.cib}</td>
-        <td className="nes">${cart.new}</td>
+        <td className="loose">${convertToCurrency(cart.loose)}</td>
+        <td className="cib">${convertToCurrency(cart.cib)}</td>
+        <td className="nes">${convertToCurrency(cart.new)}</td>
         <td className="icons">
           <Notifications />
           <i className="add-cart-button lnr lnr-plus-circle" id={cart.id} onClick={this.addToMyCollection} />
