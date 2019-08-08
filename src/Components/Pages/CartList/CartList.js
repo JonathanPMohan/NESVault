@@ -105,7 +105,7 @@ class CartList extends React.Component {
                 <th scope="col">IMAGE</th>
                 <th scope="col">NAME</th>
                 <th scope="col">GENRE</th>
-                <th scope="col">RELEASE DATE</th>
+                <th scope="col">RELEASED</th>
                 <th scope="col">LOOSE</th>
                 <th scope="col">CIB</th>
                 <th scope="col">NEW</th>

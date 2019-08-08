@@ -20,18 +20,26 @@ class NesDetail extends React.Component {
   }
 
   render() {
-    const { singleNesCart } = this.state;
+    const singleNesCart = { ...this.state.singleNesCart };
 
     return (
       <div className="nes-detail mx-auto w-100 animated fadeIn">
         <div className="nes-cart-detail-wrapper mx-auto">
-          <img className="singleNesCart-image" src={singleNesCart.imageUrl} alt={singleNesCart.name} />
+          {singleNesCart.productId ? (
+            <img
+              className="singleNesCart-image"
+              src={require(`../../../images/carts/${singleNesCart.productId}.jpg`)}
+            />
+          ) : (
+            <div />
+          )}
+
           <div className="nes-cart-detail-single">
             <h1 className="singleNesCart-name">{singleNesCart.name}</h1>
 
-            <h2 className="singleNesCart-genre">{singleNesCart.genre}</h2>
-            <h2 className="singleNesCart-releaseDate">{Utility.dateFormat(singleNesCart.releaseDate)}</h2>
-            <h2 className="singleNesCart-loose-price">${singleNesCart.loose}</h2>
+            <h2 className="singleNesCart-genre">Genre: {singleNesCart.genre}</h2>
+            <h2 className="singleNesCart-releaseDate">Released: {Utility.dateFormat(singleNesCart.releaseDate)}</h2>
+            <h2 className="singleNesCart-loose-price">Loose Value: ${singleNesCart.loose}</h2>
 
             <button className="backToCollection" onClick={this.backToCollectionView}>
               <span className="lnr lnr-arrow-left-circle back" />

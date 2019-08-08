@@ -20,7 +20,7 @@ class PrintWishListCard extends React.Component {
 
     return (
       <div className="myCartCard col-2">
-        <img className="myCartImage" src={wishList.imageUrl} alt={wishList.id} />
+        <img className="myCartImg" src={require(`../../images/carts/${wishList.productId}.jpg`)} />
         <h4 className="myCart-card-header">{wishList.name}</h4>
         {/* <h6 className="myCart-card-header">{wishList.genre}</h6>
         <h6 className="myCart-card-header">{Utility.dateFormat(wishList.releaseDate)}</h6>

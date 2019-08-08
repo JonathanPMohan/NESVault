@@ -58,7 +58,7 @@ class CartListTable extends React.Component {
         </th>
         <td className="cart-image">
           {/* <img className="cart-img" src={cart.imageUrl} alt="cart" /> */}
-          <img className="cart-img" src="http://localhost:3000/images/carts/9941.jpg" alt="cart" />
+          <img className="cart-img" src={require(`../../images/carts/${cart.productId}.jpg`)} />
         </td>
         <td className="name">{cart.name}</td>
         <td className="genre">{cart.genre}</td>

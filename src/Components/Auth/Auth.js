@@ -1,6 +1,8 @@
 import React from 'react';
 import { createButton } from 'react-social-login-buttons';
 import authRequests from '../../helpers/Data/authRequests';
+
+import NESCharacters from '../../images/nes_characters_group.png';
 import './Auth.scss';
 
 // import NESLogo from '../../../images/nes_vault.png';
@@ -34,6 +36,7 @@ class Auth extends React.Component {
     return (
       <div className="Auth mt-5">
         <div className="d-flex justify-content-center" />
+        <img src={NESCharacters} className="admin-characters" alt="characters" />
         <div className="login d-flex justify-content-center">
           <MyGoogleLoginButton id="googleBtn" className="google-auth" onClick={this.googleAuthenticateUser} />
         </div>
