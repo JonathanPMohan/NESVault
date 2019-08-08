@@ -2,7 +2,7 @@
 
 The NESVault is my E8 Final Backend Capstone. I've always been a huge fan of retro videos games and have been an avid collector for many years. In the last five years of so, the amount of NES collectors across the globe has grown rapidly. With the limited supply of these classic games from the 80's and early 90's, the value of individula titles have begun to rise.
 
-I wanted to provide the ability for individual NES collectors to keep track of their personal collection, tally the entire the worth and total counts of carts they hold. Along with your own personal collection, I wanted to provide them with the abilty to build a wish list of games they're searching for as well as a trade list of games they're willing to part ways with. After finding an amazing API to access the entire database of NES titles, I then built the database within the app allowing users to add to the corresponding lists depending on the titles they hold in the collection.
+I wanted to provide the ability for individual NES collectors to keep track of their personal collection, tally the entire the worth and total counts of carts they hold. Along with your own personal collection, I wanted to provide them with the abilty to build a wish list of games they're searching for as well as a trade list of games they're willing to part ways with. After finding an amazing API to access the entire database of NES titles, I then built the database within Sql & the app allowing users to add to the corresponding lists depending on the titles they hold in the collection and looking to land and/or trade.
 
 For fun I added a section to where they can search YouTube for videos of their favorite games as well as a way to play chip tone 8 bit music from their favorite games and more. Being the lifelong fan I am, I basically provided a hub for afficinados and collectors alike to just have a place to call home.
 
@@ -22,15 +22,16 @@ After authorization with your google account the database is checked for an exis
 
 ## Screenshots
 
-![Auth Screenshot]()
-![Home Screenshot]()
-![Database Screenshot]()
-![Collection Screenshot]()
-![Collection Detail Screenshot]()
-![WishList Screenshot]()
-![TradeList Screenshot]()
-![VideoPage Screenshot]()
-![VideoPage2 Screenshot]()
+![Auth Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/auth.png)
+![Home Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/home.png)
+![Database Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/database.png)
+![Profile Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/profile.png)
+![Collection Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/collection.png)
+![Collection Detail Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/detail.png)
+![WishList Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/trade.png)
+![TradeList Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/wish.png)
+![VideoPage Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/video.png)
+![VideoPage2 Screenshot](https://raw.githubusercontent.com/JonathanPMohan/NESVault/master/public/screenshots/video2.png)
 
 ## How to run this project:
 
