@@ -20,7 +20,8 @@
   font-size: 1.25rem;
   font-weight: bold;
   background-color: red;
-  color: black;
+  color: white;
+  text-shadow: 2px 2px #000000;
   border-bottom: 2px solid black;
   border-top: 3px solid white;
   border-top-left-radius: 10px;
@@ -61,4 +62,14 @@
 .pie-chart {
   margin-top: -200%;
   margin-left: 250%;
+}
+
+.profile-info {
+  // background-image: url("https://www.pngkey.com/png/full/495-4957129_nintendo-nes-controller.png");
+  // background-attachment: scroll;
+  // background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  color: white !important;
 }

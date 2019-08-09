@@ -42,10 +42,10 @@ class Notifications extends React.Component {
   onShow = (msg) => {
     if (this.timout) {
       clearTimeout(this.timeout);
-      this.setState({ top: -100 }, () => {
+      this.setState({ right: -100 }, () => {
         this.timeout = setTimeout(() => {
           this.showNotification();
-        }, 500);
+        }, 1000);
       });
     } else {
       this.showNotification(msg);
@@ -55,7 +55,7 @@ class Notifications extends React.Component {
   showNotification = () => {
     this.setState(
       {
-        top: 16,
+        top: 435,
         msg: '',
       },
       () => {
@@ -63,7 +63,7 @@ class Notifications extends React.Component {
           this.setState({
             top: -100,
           });
-        }, 3000);
+        }, 5000);
       },
     );
   };
