@@ -18,3 +18,12 @@
 body {
   height: 100vh;
 }
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}

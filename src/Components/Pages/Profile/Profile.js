@@ -30,7 +30,6 @@ class Profile extends React.Component {
       .then((myCarts) => {
         const greatestValue = myCarts.reduce((a, b) => (b.loose > a.loose ? b : a));
         const greatestPrice = greatestValue.loose.toFixed(2);
-        // greatestPrice.toFixed(2);
         this.setState({
           myCartsCount: myCarts.length,
           myCarts,
@@ -61,7 +60,6 @@ class Profile extends React.Component {
         fbUserObject: fbUser.providerData[0],
       });
       this.getCollection();
-      // this.getSingleUser();
     });
   }
 
@@ -91,11 +89,9 @@ class Profile extends React.Component {
   };
 
   userFormSubmitEvent = (newUser) => {
-    // const { updateUser } = this.props;
     userRequests
       .updateUser(newUser)
       .then((result) => {
-        // updateUser();
         this.setState({
           showModal: false,
           isEditing: false,
@@ -164,21 +160,23 @@ class Profile extends React.Component {
                     EDIT
                   </Button>
                 </CardHeader>
-                <CardBody>
-                  <CardText>
-                    <h4>
-                      <b>CART COUNT:</b> {myCartsCount} of 716
-                    </h4>
+                <CardBody className="profile-info">
+                  <CardText className="profile-text">
+                    <h3>
+                      <b># of Carts:</b> {myCartsCount} of 716
+                    </h3>
                     <p />
-                    <h4>
-                      <b>TOTAL WORTH:</b> ${getCollectionValue()}
-                    </h4>
-                    <h6>
-                      <b>MOST VALUABLE:</b> {greatestValue.name} | ${greatestPrice}
-                    </h6>
-                    <h6>
-                      <b>FAVORITE GAME:</b> {`${userObject.favoriteGame}`}
-                    </h6>
+                    <h3>
+                      <b>Total Value:</b> ${getCollectionValue()}
+                    </h3>
+                    <p />
+                    <h5>
+                      <b>Most Valuable:</b> {greatestValue.name} | ${greatestPrice}
+                    </h5>
+                    <p />
+                    <h5>
+                      <b>Favorite Game:</b> {`${userObject.favoriteGame}`}
+                    </h5>
                   </CardText>
                 </CardBody>
               </Card>
